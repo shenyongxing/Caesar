@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Caesar</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="title_activity_share_data">ShareDataActivity</string>
+    <string name="share_activity_alert">这是学习share data的demo</string>
+    <string name="share_button_text">分享</string>
+    <string name="title_activity_matrix_demo">MatrixDemo</string>
+</resources>

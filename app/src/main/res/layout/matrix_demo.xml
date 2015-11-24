@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:padding="20dp">
+
+    <ImageView
+        android:background="#ffffff00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+        <!--android:scaleType必须在android:src后面设置.否则图片不会显示.
+        因为scaleType是作用于src所指定的图片.
+
+        android:src与android:background的区别是src是做为内容显示的, 且并不是所有的view都有src的配置项,
+        src的图片会按照原图来显示.
+        而background是作为背景显示.
+        并且
+
+
+
+        -->
+</LinearLayout>
