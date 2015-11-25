@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linearLayout"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.study.shenxing.caesar.roundimage.RoundImageView
+        android:id="@+id/roundImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/round_image_background"/>
+
+    <!--         <ImageView android:id="@+id/androidImageView" -->
+    <!--             android:layout_width="match_parent" -->
+    <!--        	    android:layout_height="match_parent" -->
+    <!--        	    android:scaleType="center" -->
+    <!--             android:background="@drawable/roundshape"/> -->
+</LinearLayout>

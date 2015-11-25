@@ -62,9 +62,9 @@ public class ShareDataActivity extends AppCompatActivity {
     private Uri getTestPicUri() {
         Resources res = getResources() ;
         Uri uri =  Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://"
-                + res.getResourcePackageName(R.drawable.technology) + "/"
-                + res.getResourceTypeName(R.drawable.technology) + "/"
-                + res.getResourceEntryName(R.drawable.technology));
+                + res.getResourcePackageName(R.drawable.ic_launcher) + "/"
+                + res.getResourceTypeName(R.drawable.ic_launcher) + "/"
+                + res.getResourceEntryName(R.drawable.ic_launcher));
 
         return uri ;
     }

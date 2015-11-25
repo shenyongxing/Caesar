@@ -80,5 +80,6 @@ public class MainActivity extends ListActivity {
         addItem("Fragment", "FragmentDemoActivity");
         addItem("Share Data", "ShareDataActivity");
         addItem("Matrix", "MatrixDemo");
+        addItem("Round Image", "RoundImageActivity");
     }
 }
