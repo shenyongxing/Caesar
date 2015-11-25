@@ -38,8 +38,7 @@
         </activity>
         <activity
             android:name=".graphic.MatrixDemo"
-            android:label="@string/title_activity_matrix_demo"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:label="@string/title_activity_matrix_demo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
