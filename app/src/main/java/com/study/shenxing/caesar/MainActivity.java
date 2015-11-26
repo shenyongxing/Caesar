@@ -85,5 +85,6 @@ public class MainActivity extends ListActivity {
         addItem("Share Data", "ShareDataActivity");
         addItem("Matrix", "MatrixDemo");
         addItem("Round Image", "RoundImageActivity");
+        addItem("Sticky ListView", "StickyListViewActivity");
     }
 }
