@@ -30,6 +30,9 @@ public class MainActivity extends ListActivity {
     }
 
     private void addItem(String title, String activityName) {
+        if (mItems.containsValue(activityName)) {
+            throw new IllegalArgumentException("activityName was repeated") ;
+        }
         mItems.put(title, activityName);
         mTitle.add(title) ;
     }
@@ -47,7 +50,6 @@ public class MainActivity extends ListActivity {
     private void startActivity(String activityName) {
         try {
             String fullName = getFullActivityName(activityName) ;
-            Log.i("shenxing", "fullName is " + fullName);
             Class activity = Class.forName(fullName) ;
             Intent it = new Intent(this, activity) ;
             startActivity(it);
@@ -74,9 +76,11 @@ public class MainActivity extends ListActivity {
     }
 
     /**
-     * 在此处添加activity
+     * 在此处添加要显示到列表的activity
+     * 注意：activity名称不能重复
      */
     private void addItems() {
+        addItem("Activity LifeCycle", "ActivityA") ;
         addItem("Fragment", "FragmentDemoActivity");
         addItem("Share Data", "ShareDataActivity");
         addItem("Matrix", "MatrixDemo");

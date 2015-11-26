@@ -54,6 +54,40 @@
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activitylifecycle.ActivityA"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activitylifecycle.ActivityB" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activitylifecycle.ActivityC">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activitylifecycle.DialogActivity"
+            android:theme="@android:style/Theme.Dialog">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
