@@ -6,8 +6,8 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+        android:supportsRtl="true">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".graphic.MatrixDemo"
-            android:label="@string/title_activity_matrix_demo">
+            android:label="@string/title_activity_matrix_demo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,16 +54,15 @@
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activitylifecycle.ActivityA"
-            android:launchMode="singleTask">
+        <activity
+            android:name=".activitylifecycle.ActivityA"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activitylifecycle.ActivityB" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -71,25 +70,33 @@
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activitylifecycle.ActivityC">
+        <activity android:name=".activitylifecycle.ActivityC" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activitylifecycle.DialogActivity"
-            android:theme="@android:style/Theme.Dialog">
+        <activity
+            android:name=".activitylifecycle.DialogActivity"
+            android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
+        <activity android:name=".stickylistview.StickyListViewActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".stickylistview.StickyListViewActivity">
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".unsorted.ThemeWallpaperActivity"
+            android:theme="@android:style/Theme.Wallpaper"
+            android:label="@string/title_activity_theme_wallpaper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

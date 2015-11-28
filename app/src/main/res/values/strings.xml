@@ -50,4 +50,7 @@
 
     <string name="close">Close</string>
     <string name="dialog">Dialog</string>
+    <string name="title_activity_theme_wallpaper">ThemeWallpaperActivity</string>
+
+    <string name="theme_wall_paper">将桌面壁纸作为应用的背景</string>
 </resources>
