@@ -95,7 +95,6 @@
         </activity>
         <activity
             android:name=".unsorted.ThemeWallpaperActivity"
-            android:theme="@android:style/Theme.Wallpaper"
             android:label="@string/title_activity_theme_wallpaper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
