@@ -88,5 +88,6 @@ public class MainActivity extends ListActivity {
         addItem("Matrix", "MatrixDemo");
         addItem("Round Image", "RoundImageActivity");
         addItem("Sticky ListView", "StickyListViewActivity");
+        addItem("Theme Wallpaper", "ThemeWallpaperActivity");
     }
 }
