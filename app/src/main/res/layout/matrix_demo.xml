@@ -2,23 +2,109 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
-    android:padding="20dp">
+    android:orientation="vertical"
+    android:padding="0dp">
+    <!--android:scaleType必须在android:src后面设置.否则图片不会显示.
 
-    <ImageView
-        android:background="#ffffff00"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    因为scaleType是作用于src所指定的图片.
 
-        <!--android:scaleType必须在android:src后面设置.否则图片不会显示.
-        因为scaleType是作用于src所指定的图片.
+    android:src与android:background的区别是src是做为内容显示的, 且并不是所有的view都有src的配置项,
+    src的图片会按照原图来显示.
+    而background是作为背景显示.
+    -->
 
-        android:src与android:background的区别是src是做为内容显示的, 且并不是所有的view都有src的配置项,
-        src的图片会按照原图来显示.
-        而background是作为背景显示.
-        并且
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
 
-        -->
+        <ImageView
+            android:id="@+id/testImageView10"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="fitEnd"
+            android:background="@color/test04"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3">
+
+        <ImageView
+            android:id="@+id/testImageView1"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView2"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView3"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView4"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView5"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView6"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView7"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView8"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/testImageView9"
+            android:src="@drawable/ic_launcher"
+            android:scaleType="matrix"
+            android:background="@color/test04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </GridLayout>
+
 </LinearLayout>

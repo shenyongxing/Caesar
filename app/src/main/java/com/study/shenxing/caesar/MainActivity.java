@@ -89,5 +89,6 @@ public class MainActivity extends ListActivity {
         addItem("Round Image", "RoundImageActivity");
         addItem("Sticky ListView", "StickyListViewActivity");
         addItem("Theme Wallpaper", "ThemeWallpaperActivity");
+        addItem("Custom Animation", "CusAnimationActivity");;
     }
 }

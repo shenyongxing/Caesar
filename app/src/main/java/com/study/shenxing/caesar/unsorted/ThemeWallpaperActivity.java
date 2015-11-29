@@ -37,6 +37,7 @@ public class ThemeWallpaperActivity extends Activity {
         setContentView(R.layout.activity_theme_wallpaper);
         mBackground = (LinearLayout) findViewById(R.id.wallpaper_background) ;
 
+        // so库文件的加载还存在一些问题
         Bitmap dst = blurBitmap(getWallpaperBitmap(), 40) ;
         saveBitmap(dst, path);
         BitmapDrawable dstDrawable = new BitmapDrawable(getResources(), dst) ;
