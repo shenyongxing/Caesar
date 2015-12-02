@@ -3,6 +3,7 @@ package com.study.shenxing.caesar.graphic.animation;
 import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.study.shenxing.caesar.R;
@@ -31,6 +32,10 @@ public class CusAnimationActivity extends AppCompatActivity {
 //        float[] f3 = {1, 0, 500, 0, 1, 500, 0, 0, 1};
 //        Matrix m1 = new Matrix();
 //        m1.setValues(f3);
-//        mTestImageView1.setImageMatrix(m1);
+
+        Matrix m1 = new Matrix();
+        m1.setSkew(0.5f, 0.5f);
+        Log.i("shenxing", "m1 : " + m1.toShortString());
+        mTestImageView1.setImageMatrix(m1);
     }
 }
