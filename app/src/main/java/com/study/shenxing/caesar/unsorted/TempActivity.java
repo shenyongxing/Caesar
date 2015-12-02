@@ -21,11 +21,11 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_temp);
+        setContentView(R.layout.admob_ad_view);
 
-        mTestArea = (RelativeLayout) findViewById(R.id.test);
-        mButton = (Button) findViewById(R.id.click_button);
-        mButton.setOnClickListener(this);
+//        mTestArea = (RelativeLayout) findViewById(R.id.test);
+//        mButton = (Button) findViewById(R.id.click_button);
+//        mButton.setOnClickListener(this);
     }
 
     @Override
