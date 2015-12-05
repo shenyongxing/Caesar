@@ -91,5 +91,6 @@ public class MainActivity extends ListActivity {
         addItem("Theme Wallpaper", "ThemeWallpaperActivity");
         addItem("Custom Animation", "CusAnimationActivity");
         addItem("Temp Demo", "TempActivity");
+        addItem("Custom FlowLayout", "CusFlowLayoutActivity");
     }
 }
