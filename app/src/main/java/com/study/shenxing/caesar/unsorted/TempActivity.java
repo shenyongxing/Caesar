@@ -53,26 +53,5 @@ public class TempActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-    // Temporary code snippet
-    // DataService.java Line 741
-    /*long lastShowTime = preferences.getLong(Const.CHARGING_POP_FLAG, 0);
-    if (System.currentTimeMillis() - lastShowTime > 3 * 60 * 1000) {
-        intent = new Intent(getApplicationContext(), MainBlackActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
 
-        SharedPreferences.Editor editor = preferences.edit() ;
-        editor.putLong(Const.CHARGING_POP_TIME, System.currentTimeMillis()) ;
-        editor.commit();
-    }*/
-
-    // MainBlankActivity.java Line 263
-    /*
-    * goToChargeTab()
-    * // 请求广告
-		mTabChargingContent.requestAd() ;
-		mGotoBaterryInfoTab = false;
-
-		在mTabChargingContent中添加requestAd()方法
-    * */
 }
