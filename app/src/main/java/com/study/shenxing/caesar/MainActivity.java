@@ -92,5 +92,6 @@ public class MainActivity extends ListActivity {
         addItem("Custom Animation", "CusAnimationActivity");
         addItem("Temp Demo", "TempActivity");
         addItem("Custom FlowLayout", "CusFlowLayoutActivity");
+        addItem("Wave View", "WaveViewActivity");
     }
 }

@@ -130,6 +130,15 @@
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".waveview.WaveViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

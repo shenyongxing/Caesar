@@ -32,4 +32,9 @@ public class AdImageView extends ImageView {
         // 保持该ImageView的宽高比
         setMeasuredDimension(widthSize, heightSize);
     }
+
+    public void setmScale(float scale) {
+        mScale = scale ;
+        requestLayout();
+    }
 }
