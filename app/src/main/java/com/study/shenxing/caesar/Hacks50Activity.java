@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -16,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends ListActivity {
+public class Hacks50Activity extends ListActivity {
     public static final String STUDY_DEMO = "android.intent.category.STUDY_DEMO";
     private Map<String, String> mItems = new HashMap<>() ;
     private List<String> mTitle = new ArrayList<>() ;
@@ -82,18 +81,6 @@ public class MainActivity extends ListActivity {
      * 注意：activity名称不能重复
      */
     private void addItems() {
-        addItem("Activity LifeCycle", "ActivityA") ;
-        addItem("Fragment", "FragmentDemoActivity");
-        addItem("Share Data", "ShareDataActivity");
-        addItem("Matrix", "MatrixDemo");
-        addItem("Round Image", "RoundImageActivity");
-        addItem("Sticky ListView", "StickyListViewActivity");
-        addItem("Theme Wallpaper", "ThemeWallpaperActivity");
-        addItem("Custom Animation", "CusAnimationActivity");
-        addItem("Temp Demo", "TempActivity");
-        addItem("Custom FlowLayout", "CusFlowLayoutActivity");
-        addItem("Wave View", "WaveViewActivity");
-        addItem("Sava data", "SaveDataActivity") ;
-        addItem("50 Hacks", "Hacks50Activity");
+        addItem("Hack2 ViewStub", "Hack2Activity");
     }
 }

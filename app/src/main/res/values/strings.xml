@@ -55,4 +55,6 @@
     <string name="theme_wall_paper">将桌面壁纸作为应用的背景</string>
     <string name="title_activity_cus_animation">CusAnimationActivity</string>
     <string name="title_activity_temp">TempActivity</string>
+    <string name="title_activity_save_data">SaveDataActivity</string>
+    <string name="title_activity_hack2">Hack2Activity</string>
 </resources>

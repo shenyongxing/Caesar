@@ -114,25 +114,50 @@
         </activity>
         <activity
             android:name=".unsorted.TempActivity"
-            android:label="@string/title_activity_temp">
+            android:label="@string/title_activity_temp" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".customview.CusFlowLayoutActivity">
+        <activity android:name=".customview.CusFlowLayoutActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
+        <activity android:name=".waveview.WaveViewActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".waveview.WaveViewActivity">
+            android:name=".savedata.SaveDataActivity"
+            android:label="@string/title_activity_save_data"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Hacks50Activity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".practise50hacks.Hack2Activity"
+            android:label="@string/title_activity_hack2"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
