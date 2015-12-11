@@ -18,8 +18,8 @@ import java.util.Map;
 
 public class MainActivity extends ListActivity {
     public static final String STUDY_DEMO = "android.intent.category.STUDY_DEMO";
-    private Map<String, String> mItems = new HashMap<>() ;
-    private List<String> mTitle = new ArrayList<>() ;
+    private Map<String, String> mItems = new HashMap<String, String>() ;
+    private List<String> mTitle = new ArrayList<String>() ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
