@@ -95,5 +95,7 @@ public class MainActivity extends ListActivity {
         addItem("Wave View", "WaveViewActivity");
         addItem("Sava data", "SaveDataActivity") ;
         addItem("50 Hacks", "Hacks50Activity");
+        addItem("SharePreference", "SharePreferencesActivity");
+        addItem("双曲落线动画", "HyperbolicAnimationActivity");
     }
 }

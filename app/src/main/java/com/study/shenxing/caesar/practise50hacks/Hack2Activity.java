@@ -1,10 +1,7 @@
 package com.study.shenxing.caesar.practise50hacks;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
@@ -42,4 +39,6 @@ public class Hack2Activity extends AppCompatActivity implements View.OnClickList
             mViewStub.setVisibility(View.INVISIBLE);
         }
     }
+    // 经过实践,只要调用了setVisibility方法即会展示ViewStub指定的view,并且之后就不能通过viewStub来操纵该view对象了.
+
 }

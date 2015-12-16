@@ -260,10 +260,10 @@ public class SaveDataActivity extends AppCompatActivity {
         );
 
         c.moveToFirst();
-        while (c.moveToNext()) {
+        do {
             String result = c.getString(c.getColumnIndex(FeedReaderContract.FeedEntry.COLUMN_NAME_CONTENT));
             Log.i("shenxing", "result : " + result) ;
-        }
+        } while (c.moveToNext()) ;
 
     }
 
