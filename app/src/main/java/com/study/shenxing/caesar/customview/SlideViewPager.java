@@ -21,6 +21,7 @@ import com.study.shenxing.caesar.R;
 
 /**
  * Created by SongNick on 15/10/26.
+ * 完善该类的事件机制
  */
 public class SlideViewPager extends ViewGroup {
 
@@ -150,8 +151,8 @@ public class SlideViewPager extends ViewGroup {
     public SlideViewPager(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SlideViewPager, 0, 0);
-        mMarginLeftRight = a.getDimension(R.styleable.SlideViewPager_marginLeftRight, 0);
-        mGutterSize = a.getDimensionPixelSize(R.styleable.SlideViewPager_gutterSize, 0);
+        mMarginLeftRight = a.getInteger(R.styleable.SlideViewPager_marginLeftRight, 0) ;
+        mGutterSize = a.getInteger(R.styleable.SlideViewPager_gutterSize, 0);
         a.recycle();
         init(context);
     }
@@ -403,6 +404,7 @@ public class SlideViewPager extends ViewGroup {
     private void dragScaleShrinkView(int position, int direction) {
 
         int distance = getScrollX() - position * mSwitchSize;
+        // getSrcollX()向右滑动时为负值
         mCurrentDir = direction;
         View scaleView = null;
         View shrinkView = null;
