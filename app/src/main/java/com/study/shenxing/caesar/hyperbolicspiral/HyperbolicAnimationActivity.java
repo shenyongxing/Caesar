@@ -29,6 +29,7 @@ public class HyperbolicAnimationActivity extends AppCompatActivity implements Vi
     public void onClick(View v) {
         Animation animation = new HyperbolicSpiralAnimation((float) Math.PI * 2) ;
         animation.setDuration(3000);
-        v.startAnimation(animation); ;
+        v.startAnimation(animation);
+
     }
 }
