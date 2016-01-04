@@ -97,5 +97,6 @@ public class MainActivity extends ListActivity {
         addItem("50 Hacks", "Hacks50Activity");
         addItem("SharePreference", "SharePreferencesActivity");
         addItem("双曲落线动画", "HyperbolicAnimationActivity");
+        addItem("materialLoading", "MaterialProgressActivity");
     }
 }

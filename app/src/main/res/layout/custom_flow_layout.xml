@@ -1,8 +1,18 @@
-<com.study.shenxing.caesar.customview.CusFlowLayout
+<com.study.shenxing.caesar.customview.SlideViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@android:color/holo_red_dark">
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.study.shenxing.caesar.customview.CusLoadingView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
 
     <TextView
         style="@style/text_flag_01"
@@ -51,4 +61,4 @@
     <EditText
         style="@style/text_flag_02"
         android:hint="输入密码"/>
-</com.study.shenxing.caesar.customview.CusFlowLayout>
+</com.study.shenxing.caesar.customview.SlideViewPager>

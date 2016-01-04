@@ -59,4 +59,5 @@
     <string name="title_activity_hack2">Hack2Activity</string>
     <string name="title_activity_share_preferences">SharePreferencesActivity</string>
     <string name="title_activity_hyperbolic_animation">HyperbolicAnimation</string>
+    <string name="title_activity_material_progress">MaterialProgressActivity</string>
 </resources>

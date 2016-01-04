@@ -169,7 +169,17 @@
         </activity>
         <activity
             android:name=".hyperbolicspiral.HyperbolicAnimationActivity"
-            android:label="@string/title_activity_hyperbolic_animation">
+            android:label="@string/title_activity_hyperbolic_animation" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".materialloadingprogressbar.MaterialProgressActivity"
+            android:label="@string/title_activity_material_progress"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

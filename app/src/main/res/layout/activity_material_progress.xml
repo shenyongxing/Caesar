@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:shen="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.study.shenxing.caesar.materialloadingprogressbar.CircleProgressBar
+        shen:mlpb_show_arrow="true"
+        shen:mlpb_arrow_width="2dp"
+        shen:mlpb_arrow_height="5dp"
+        android:layout_gravity="center"
+        shen:mlpb_background_color="@android:color/darker_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
