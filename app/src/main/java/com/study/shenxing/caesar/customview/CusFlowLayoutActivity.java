@@ -10,6 +10,7 @@ public class CusFlowLayoutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.custom_flow_layout);
+//        setContentView(R.layout.custom_flow_layout);
+        setContentView(R.layout.slide_view_pager_layout) ;
     }
 }

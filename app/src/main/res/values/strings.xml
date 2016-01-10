@@ -1,4 +1,4 @@
-<resources>
+﻿<resources>
     <string name="app_name">Caesar</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
@@ -60,4 +60,7 @@
     <string name="title_activity_share_preferences">SharePreferencesActivity</string>
     <string name="title_activity_hyperbolic_animation">HyperbolicAnimation</string>
     <string name="title_activity_material_progress">MaterialProgressActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_view_flipper">ViewFlipperActivity</string>
+    <string name="title_activity_window_manager">WindowManagerActivity</string>
 </resources>

@@ -96,7 +96,9 @@ public class MainActivity extends ListActivity {
         addItem("Sava data", "SaveDataActivity") ;
         addItem("50 Hacks", "Hacks50Activity");
         addItem("SharePreference", "SharePreferencesActivity");
-        addItem("双曲落线动画", "HyperbolicAnimationActivity");
-        addItem("materialLoading", "MaterialProgressActivity");
+        addItem("双曲螺线动画", "HyperbolicAnimationActivity");
+        addItem("知识点测试", "TestActivity");
+        addItem("ViewFlipper", "ViewFlipperActivity");
+        addItem("悬浮窗demo", "WindowManagerActivity");
     }
 }
