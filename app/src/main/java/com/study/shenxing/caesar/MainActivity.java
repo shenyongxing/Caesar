@@ -11,6 +11,8 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.study.shenxing.caesar.shader.ShaderActivity;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -100,5 +102,6 @@ public class MainActivity extends ListActivity {
         addItem("知识点测试", "TestActivity");
         addItem("ViewFlipper", "ViewFlipperActivity");
         addItem("悬浮窗demo", "WindowManagerActivity");
+        addItem("Shader", "ShaderActivity");
     }
 }
