@@ -84,7 +84,7 @@ public class SlideImageView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        if (mArrowDrawable != null) {
+        if (mArrowBitmap != null) {
             int thisNum = 1 + mCycleNum % mCirculationNum;
 
             // 跑马灯的区域是[-rangeArea, 1 + rangeArea]
@@ -95,8 +95,8 @@ public class SlideImageView extends View {
                             centerX + mRangeArea, 2f }, Shader.TileMode.CLAMP);
             shader.setLocalMatrix(mMatrix);
             mPaint.setShader(shader);
-            mArrowDrawable.draw(canvas);
-//            canvas.drawBitmap(mArrowBitmap, 0, 0, mPaint);
+//            mArrowDrawable.draw(canvas);
+            canvas.drawBitmap(mArrowBitmap, 0, 0, mPaint);
 //            canvas.drawText("hello world", 30, 30, mPaint);
         }
     }
