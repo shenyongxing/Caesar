@@ -65,4 +65,5 @@
     <string name="title_activity_view_flipper">ViewFlipperActivity</string>
     <string name="title_activity_window_manager">WindowManagerActivity</string>
     <string name="title_activity_shader">ShaderActivity</string>
+    <string name="title_activity_list_demo">ListDemoActivity</string>
 </resources>
