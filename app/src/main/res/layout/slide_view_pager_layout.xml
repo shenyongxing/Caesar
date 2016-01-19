@@ -40,19 +40,28 @@
         style="@style/text_flag_02"
         android:text="床前明月光,疑似地上霜,举头望明月,低头思故乡" />
 
-    <EditText
+    <TextView
         style="@style/text_flag_02"
         android:hint="数风流人物还看今朝"/>
 
-    <EditText
+    <TextView
         style="@style/text_flag_02"
         android:hint="埋骨何须桑梓地,人生何处不青山"/>
 
-    <EditText
+    <TextView
         style="@style/text_flag_02"
         android:hint="输入账号"/>
 
-    <EditText
+    <TextView
         style="@style/text_flag_02"
         android:hint="输入密码"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.study.shenxing.caesar.customview.SimulateRadarView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </com.study.shenxing.caesar.customview.SlideViewPager>
