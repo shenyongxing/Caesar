@@ -12,8 +12,9 @@
         android:id="@+id/flipper"
         android:layout_width="match_parent"
         android:background="@android:color/holo_red_dark"
-        android:layout_height="200dp">
-
+        android:layout_height="200dp"
+        android:flipInterval="1500"
+        android:autoStart="true">
     </ViewFlipper>
 
 
@@ -43,6 +44,15 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
+
+    <AdapterViewFlipper
+        android:id="@+id/adapter_view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:flipInterval="1000"
+        android:autoStart="true">
+
+    </AdapterViewFlipper>
 
 
 </LinearLayout>

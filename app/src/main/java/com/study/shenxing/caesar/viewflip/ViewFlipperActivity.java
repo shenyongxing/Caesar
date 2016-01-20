@@ -1,17 +1,22 @@
 package com.study.shenxing.caesar.viewflip;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
+import android.widget.AdapterViewFlipper;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.ViewFlipper;
 
@@ -26,6 +31,13 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnCli
     private Button mStartButton ;
     private Button mStopButton ;
     private Spinner mSpinner ;
+
+    /**
+     * 可以利用adapter提供数据源的ViewFlipper
+     */
+    private AdapterViewFlipper mAdapterViewFlipper ;
+    private CusAdapter mCusAdapter ;
+
     private int[] mDrawableRes = new int[] {R.drawable.gallery_photo_1, R.drawable.gallery_photo_2,
             R.drawable.gallery_photo_3, R.drawable.gallery_photo_4, R.drawable.gallery_photo_5} ;
     private String[] mLinks = new String[]{
@@ -44,6 +56,7 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_view_flipper);
 
         mViewFlipper = (ViewFlipper) findViewById(R.id.flipper);
+        mAdapterViewFlipper = (AdapterViewFlipper) findViewById(R.id.adapter_view_flipper);
         mStartButton = (Button) findViewById(R.id.start);
         mStartButton.setOnClickListener(this);
         mStopButton = (Button) findViewById(R.id.stop);
@@ -67,6 +80,9 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnCli
         initCusAnimation(0);
         init();
         loadAd();
+
+        mCusAdapter = new CusAdapter(this, mAdData) ;
+        mAdapterViewFlipper.setAdapter(mCusAdapter);
     }
 
     /**
@@ -182,6 +198,45 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnCli
 
         public void setmLink(String mLink) {
             this.mLink = mLink;
+        }
+    }
+
+    private class CusAdapter extends BaseAdapter {
+        private List<DrawableBean> mDataList ;
+        private Context mContext ;
+        public CusAdapter(Context context, List<DrawableBean> list) {
+            super();
+            mContext = context ;
+            mDataList = list ;
+        }
+
+        @Override
+        public int getCount() {
+            return mDataList.size();
+        }
+
+        @Override
+        public Object getItem(int position) {
+            return mDataList.get(position);
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(final int position, View convertView, ViewGroup parent) {
+            ImageView img  = new ImageView(mContext) ;
+            img.setBackgroundDrawable(mDataList.get(position).mDrawable);
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    gotoBroswer(mDataList.get(position).mLink);
+                }
+            });
+            img.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+            return img;
         }
     }
 }

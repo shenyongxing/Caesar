@@ -2,6 +2,8 @@ package com.study.shenxing.caesar.customview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -22,11 +24,13 @@ import com.study.shenxing.caesar.R;
  * 扫描垃圾动画view
  */
 public class SimulateRadarView extends View {
-    private Drawable mBackground;   // 背景图
+    private Bitmap mBackground;   // 背景图
     private int mViewWidths ;
     private int mViewHeight ;
     private float mCurAngle = 30 ;
     private Paint mPaint;
+    private PorterDuffXfermode mDrawMode = new PorterDuffXfermode(PorterDuff.Mode.SRC_IN) ;
+    private CusAnimation mCusAnim ;
 
     public SimulateRadarView(Context context) {
         super(context);
@@ -48,30 +52,46 @@ public class SimulateRadarView extends View {
         mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.FILL);
 
-        mBackground = getResources().getDrawable(R.drawable.optimization_greentake);
-        mViewWidths = mBackground.getIntrinsicWidth() ;
-        mViewHeight = mBackground.getIntrinsicHeight() ;
-        mBackground.setBounds(0, 0, mViewWidths, mViewHeight);
+        mBackground = BitmapFactory.decodeResource(getResources(), R.drawable.optimization_greentake) ;
+        mViewWidths = mBackground.getWidth() ;
+        mViewHeight = mBackground.getHeight() ;
 
+        mCusAnim = new CusAnimation() ;
+        mCusAnim.setDuration(2000);
+        mCusAnim.setRepeatMode(Animation.RESTART);
+        mCusAnim.setRepeatCount(Animation.INFINITE);
+        startAnimation(mCusAnim);
+    }
+
+    /**
+     * 开始清理动画
+     */
+    public void startClearAnimation() {
+        startAnimation(mCusAnim);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        RectF arcRect = new RectF(0, 0, getWidth(), getHeight()) ;
+        canvas.saveLayer(0, 0, getWidth(), getHeight(), null,
+                Canvas.MATRIX_SAVE_FLAG |
+                        Canvas.CLIP_SAVE_FLAG |
+                        Canvas.HAS_ALPHA_LAYER_SAVE_FLAG |
+                        Canvas.FULL_COLOR_LAYER_SAVE_FLAG |
+                        Canvas.CLIP_TO_LAYER_SAVE_FLAG);
+        canvas.drawArc(arcRect, 0, mCurAngle, true, mPaint);
+        mPaint.setXfermode(mDrawMode) ;
         // 绘制扇形遮罩
-        mPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.S)) ;
-        canvas.drawArc(new RectF(0, 0, getWidth(), getHeight()), 0, mCurAngle, true, mPaint);
+        canvas.drawBitmap(mBackground, 0, 0, mPaint);
         mPaint.setXfermode(null) ;
-        mBackground.draw(canvas);
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
         setMeasuredDimension(resolveSize(mViewWidths, widthMeasureSpec), resolveSize(mViewHeight, heightMeasureSpec));
-
     }
 
     /**
