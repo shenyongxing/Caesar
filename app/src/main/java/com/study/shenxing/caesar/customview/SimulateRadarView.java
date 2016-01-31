@@ -88,6 +88,10 @@ public class SimulateRadarView extends View {
         mPaint.setXfermode(null) ;
     }
 
+    // onDraw中是我的实现方法.但是看到了伦爷的实现方式更好.
+    // 他利用了背景色, 即在图层上面绘制扇形时设置画笔的颜色和底色一样,然后角度从360度(即全部覆盖地图)到0°变化.
+    // 这种思考问题的方式值得学习, 虽然这种实现方式有局限性.
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
