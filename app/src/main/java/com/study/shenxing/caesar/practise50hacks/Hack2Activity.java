@@ -41,4 +41,6 @@ public class Hack2Activity extends AppCompatActivity implements View.OnClickList
     }
     // 经过实践,只要调用了setVisibility方法即会展示ViewStub指定的view,并且之后就不能通过viewStub来操纵该view对象了.
 
+    // 在开发省电的悬浮窗时,有点击后显示或隐藏的需求, 可以设置标志位的方式来解决是否重新inflate的问题.
+
 }

@@ -18,26 +18,26 @@ import android.view.View;
 
 @SuppressLint("DrawAllocation")
 public class SlideTextView extends View {
-	private String showText = "���һ���������";
+	private String showText = "向右滑动来解锁";
 
 	private Paint paint;
-	private int cycleNum = 0; // �߳�ѭ����sleep�Ĵ���
+	private int cycleNum = 0; // 线程循环，sleep的次数
 
-	// ��onDraw�����е���canvas.drawText��Ҫ����x/y���꣬�Ǹ��������������½ǵ����ꡣ
+	// 在onDraw函数中调用canvas.drawText需要传入x/y坐标，那个坐标是文字左下角的坐标。
 	private int firstLineOffset = 0;
 
-	// drawText��y��ʼֵ�ǳ����ܣ�����stackoverflow�ķ������Ǹ�yֵҪͨ�����㵥������ռ�ݵĸ߶ȣ��űȽϿ�ѧ���������Ǵ���һ����ƫ��
-	// ���extraPaddingTop���������ֲ�ƫ��ģ������������ȷ
+	// drawText的y初始值非常诡谲，根据stackoverflow的反馈，那个y值要通过计算单个文字占据的高度，才比较科学、合理，但是存在一定的偏差
+	// 这个extraPaddingTop就是用来弥补偏差的，不代表绝对正确
 	private int extraPaddingTop = PixValue.dip.valueOf(1f);
 
-	// ����������Ҫͨ��xml�ļ�������
-	private int textSize = PixValue.sp.valueOf(18); // �ֺ�
-	private int textColor = Color.WHITE; // ������ɫ
+	// 以下属性需要通过xml文件来配置
+	private int textSize = PixValue.sp.valueOf(18); // 字号
+	private int textColor = Color.WHITE; // 文字颜色
 
 	private int textWidth, textHeight;
 
-	// �����ֵ���ߺ��ұߣ��������һЩ�ո���ռλ
-	// rangeArea����˼����������ֲ���ռ�������ֲ���(�������ո�)������֮һ
+	// 在文字的左边和右边，都添加了一些空格以占位
+	// rangeArea的意思是闪光的文字部分占所有文字部分(不包括空格)的三分之一
 	private String extraText, actualText;
 	private int extraWidth;
 	private float rangeArea;
@@ -56,24 +56,24 @@ public class SlideTextView extends View {
 	public SlideTextView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 
-		// 1. ��ʼ��paint����
+		// 1. 初始化paint画笔
 		paint = new Paint();
 		paint.setAntiAlias(true);
 		paint.setColor(textColor);
 		paint.setTextSize(textSize);
 		paint.setTextAlign(Align.LEFT);
 
-		// 2. ��ʼ���Ǹ����ܵ�y����ֵ
+		// 2. 初始化那个诡谲的y坐标值
 		Rect rect = new Rect();
-		paint.getTextBounds("��", 0, 1, rect); // ��һ�����͵ĺ���Ϊģ�壬����߶�
-		firstLineOffset = (int) (rect.height() - rect.bottom) + extraPaddingTop; // stackoverflow����ĳ�˸��Ľ���
+		paint.getTextBounds("豆", 0, 1, rect); // 以一个典型的汉字为模板，计算高度
+		firstLineOffset = (int) (rect.height() - rect.bottom) + extraPaddingTop; // stackoverflow上面某人给的建议
 
 		textWidth = (int) paint.measureText(showText);
 		textHeight = textSize;
 		extraText = "            ";
 		extraWidth = (int) paint.measureText(extraText);
 		rangeArea = (float) textWidth / (textWidth + extraWidth * 2) / 3;
-		actualText = extraText + showText + extraText; // drawTextʱ�������ֵ���ߺ��ұߣ��������һЩ�ո���ռλ
+		actualText = extraText + showText + extraText; // drawText时，在文字的左边和右边，都添加了一些空格以占位
 		maxXDistance = 1 + 2 * rangeArea;
 		darkColor = Color.parseColor("#747474");
 		trans = new Matrix();
@@ -82,6 +82,7 @@ public class SlideTextView extends View {
 
 	@Override
 	protected void onFinishInflate() {
+		super.onFinishInflate();
 		new UIThread().start();
 	}
 
@@ -89,7 +90,7 @@ public class SlideTextView extends View {
 	protected void onDraw(Canvas canvas) {
 		int thisNum = 1 + cycleNum % circulationNum;
 
-		// ����Ƶ�������[-rangeArea, 1 + rangeArea]
+		// 跑马灯的区域是[-rangeArea, 1 + rangeArea]
 		float centerX = -rangeArea + maxXDistance * thisNum / circulationNum;
 		Shader shader = new LinearGradient(0, 0, 0, textWidth, new int[] {
 				darkColor, darkColor, Color.WHITE, darkColor, darkColor },
@@ -101,7 +102,7 @@ public class SlideTextView extends View {
 				getPaddingTop() + firstLineOffset, paint);
 	}
 
-	private int circulationNum = 30; // ��������һ��ѭ���Ĵ���
+	private int circulationNum = 30; // 从左至右一次循环的次数
 
 	class UIThread extends Thread {
 
@@ -114,7 +115,7 @@ public class SlideTextView extends View {
 			try {
 				while (true) {
 					sleep(40);
-					// handler֪ͨui��������͸����
+					// handler通知ui更新文字透明度
 					if (cycleNum > 0 && cycleNum % circulationNum == 0) {
 						sleep(1200);
 					}
@@ -133,7 +134,7 @@ public class SlideTextView extends View {
 
 		@Override
 		public void handleMessage(Message msg) {
-			// ˢ��View
+			// 刷新View
 			invalidate();
 		};
 	};
@@ -142,7 +143,7 @@ public class SlideTextView extends View {
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 
-		// ��дonMeasure������û����View���ֶ�����߶�
+		// 复写onMeasure方法，没有子View，手动计算高度
 		setMeasuredDimension(textWidth + getPaddingLeft() + getPaddingRight(),
 				textHeight + getPaddingTop() + getPaddingBottom());
 	}
