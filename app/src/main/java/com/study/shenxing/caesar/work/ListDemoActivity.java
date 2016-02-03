@@ -116,14 +116,14 @@ public class ListDemoActivity extends AppCompatActivity {
             }
 
             if (position == 0) {
-                viewHolder.mIcon1.setImageResource(R.drawable.hot_word_search_hot_icon);
-                viewHolder.mIcon2.setImageResource(R.drawable.hot_word_search_hot_icon);
+                viewHolder.mIcon1.setBackgroundResource(R.drawable.hot_word_search_hot_icon);
+                viewHolder.mIcon2.setBackgroundResource(R.drawable.hot_word_search_hot_icon);
             } else if (position == 1) {
-                viewHolder.mIcon1.setImageResource(R.drawable.little_hot_word_search_hot_icon);
-                viewHolder.mIcon2.setImageResource(R.drawable.little_hot_word_search_hot_icon);
+                viewHolder.mIcon1.setBackgroundResource(R.drawable.little_hot_word_search_hot_icon);
+                viewHolder.mIcon2.setBackgroundResource(R.drawable.little_hot_word_search_hot_icon);
             } else if (position == 2) {
-                viewHolder.mIcon1.setImageResource(R.drawable.little_hot_word_search_hot_icon);
-                viewHolder.mIcon2.setImageResource(R.drawable.hot_word_search_next_batch);
+                viewHolder.mIcon1.setBackgroundResource(R.drawable.little_hot_word_search_hot_icon);
+                viewHolder.mIcon2.setBackgroundResource(R.drawable.hot_word_search_next_batch);
             }
 
             String[] itemData = mDataList.get(position) ;

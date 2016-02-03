@@ -105,5 +105,7 @@ public class MainActivity extends ListActivity {
         addItem("悬浮窗demo", "WindowManagerActivity");
         addItem("Shader", "ShaderActivity");
         addItem("Work demo", "ListDemoActivity");
+        addItem("DataBase", "DatabaseDemoActivity");
+        addItem("Intent的常用用法", "IntentCommonUseActivity");
     }
 }

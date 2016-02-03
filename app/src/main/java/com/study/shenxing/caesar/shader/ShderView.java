@@ -25,7 +25,7 @@ import com.study.shenxing.caesar.R;
 /**
  * shader demo view
  * Created by shenxing on 16/1/31.
- * 自定义如何不实现onMeasure方法, 那么其宽高都有一个默认值. 所以当高度超过默认值时,view的下半部分就会
+ * 自定义View如不实现onMeasure方法, 那么其宽高都有一个默认值.所以超出了部分的内容则不会显示。 需要注意。
  */
 public class ShderView extends View {
     private Drawable mShaderDrawable ;
