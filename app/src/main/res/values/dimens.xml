@@ -6,4 +6,6 @@
     <dimen name="font_large">44dp</dimen>
     <dimen name="font_medium">24dp</dimen>
     <dimen name="font_small">10dp</dimen>
+
+    <dimen name="slide_to_unlock_textsize">24sp</dimen>
 </resources>

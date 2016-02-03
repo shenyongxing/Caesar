@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ComposeShader;
 import android.graphics.LinearGradient;
+import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.RadialGradient;
@@ -35,6 +36,7 @@ public class ShderView extends View {
     private RadialGradient mRadialShader ;
     private SweepGradient mSweepShader ;
     private ComposeShader mComposeShader ;
+    private Matrix mMatrix ;
 
     private Paint mPaint ;
 
@@ -57,13 +59,14 @@ public class ShderView extends View {
         mShaderDrawable = getResources().getDrawable(R.drawable.optimization_greentake) ;
         Bitmap bitmap = ((BitmapDrawable) mShaderDrawable).getBitmap() ;
         // Shader.TileMode.CLAMP重复延伸边缘的颜色.
-        mBitmapShader = new BitmapShader(bitmap, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP) ;
-        mLinearShader = new LinearGradient(10, 10, 100, 100, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, null, Shader.TileMode.REPEAT);
+        mBitmapShader = new BitmapShader(bitmap, Shader.TileMode.MIRROR, Shader.TileMode.CLAMP) ;
+        mLinearShader = new LinearGradient(0, 0, 1000, 500, new int[]{Color.RED, Color.GREEN, Color.BLUE}, new float[]{0.5f, 0.2f, 1.0f}, Shader.TileMode.REPEAT);
         mRadialShader = new RadialGradient(50, 50, 100, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, null, Shader.TileMode.REPEAT);
         mSweepShader = new SweepGradient(500, 1010, new int[]{Color.RED, Color.BLUE, Color.GREEN}, null);
         mComposeShader = new ComposeShader(mBitmapShader, mLinearShader, PorterDuff.Mode.DST_IN);
 
         mPaint = new Paint() ;
+        mMatrix = new Matrix() ;
     }
 
     @Override
@@ -72,20 +75,22 @@ public class ShderView extends View {
 
         canvas.drawColor(Color.WHITE);
 
-        mPaint.setShader(mBitmapShader) ;
-        canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);
+//        mMatrix.setTranslate(-20, -20);
+//        mBitmapShader.setLocalMatrix(mMatrix);
+        /*mPaint.setShader(mBitmapShader) ;
+        canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);*/
 
         mPaint.setShader(mLinearShader);
-        canvas.drawRect(new Rect(0, 550, 1000, 750), mPaint);
+        canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);
 
-        mPaint.setShader(mRadialShader) ;
-        canvas.drawRect(new Rect(0, 760, 1000, 1000), mPaint);
+        /*mPaint.setShader(mRadialShader) ;
+        canvas.drawRect(new Rect(0, 760, 1000, 1000), mPaint);*/
 
-        mPaint.setShader(mSweepShader);
-        canvas.drawCircle(500, 1010, 100, mPaint);
+        /*mPaint.setShader(mSweepShader);
+        canvas.drawCircle(500, 1010, 100, mPaint);*/
 
-        mPaint.setShader(mComposeShader) ;
-        canvas.drawRect(new Rect(0, 1020, 1000, 1200), mPaint);
+        /*mPaint.setShader(mComposeShader) ;
+        canvas.drawRect(new Rect(0, 1020, 1000, 1200), mPaint);*/
     }
 
     @Override

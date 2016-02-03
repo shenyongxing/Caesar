@@ -1,11 +1,11 @@
 package com.study.shenxing.caesar.shader;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.study.shenxing.caesar.R;
 
-public class ShaderActivity extends AppCompatActivity {
+public class ShaderActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
