@@ -2,84 +2,72 @@ package com.study.shenxing.caesar.shader;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Shader.TileMode;
+import android.graphics.Shader;
 import android.os.Handler;
-import android.os.Message;
 import android.util.AttributeSet;
-import android.view.View;
+import android.widget.TextView;
 
-import com.study.shenxing.caesar.R;
+/**
+ * 带有渐变动画的文字TextView，类似锁屏的Slide to unlock
+ */
+public class SlideTextView2 extends TextView {
 
-public class SlideTextView2 extends View {
-	private String mShowText = "滑动来解锁";
-	private int mTextWidth ;
+	private LinearGradient mLinearGradient;
+	private Matrix mGradientMatrix;
 	private Paint mPaint;
-	private LinearGradient mLinearShader ;
-	private Matrix mMatrix = new Matrix() ;
-	private int mXoffSet ;
-	private int mDarkColor = Color.parseColor("#dd000000") ;
-	private int mLightColor = android.R.color.white;
+	private int mViewWidth = 0;
+	private int mTranslate = 0;
 
-	public SlideTextView2(Context context) {
-		this(context, null);
-		init();
-	}
+	private boolean mAnimating = true;
 
 	public SlideTextView2(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
-		init();
+		super(context, attrs);
 	}
 
-	public SlideTextView2(Context context, AttributeSet attrs, int defStyleAttr) {
-		super(context, attrs, defStyleAttr);
-		init();
-	}
-
-	private void init() {
-		mPaint = new Paint() ;
-		mPaint.setAntiAlias(true);
-		mPaint.setColor(0xffffffff);
-		mPaint.setTextSize(getResources().getDimensionPixelSize(R.dimen.slide_to_unlock_textsize));
-		Paint.FontMetrics fm = new Paint.FontMetrics() ;
-		mTextWidth = mPaint.getTextWidths(mShowText, 0, mShowText.length(), new float[mShowText.length()]) ;
-		mLinearShader = new LinearGradient(0, 0, 1000, 1000, new int[]{mDarkColor, mLightColor, mDarkColor}, null, TileMode.CLAMP) ;
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		super.onSizeChanged(w, h, oldw, oldh);
+		if (mViewWidth == 0) {
+			mViewWidth = getMeasuredWidth();
+			if (mViewWidth > 0) {
+				mPaint = getPaint();
+				mLinearGradient = new LinearGradient(-mViewWidth, 0, 0, 0,
+						new int[] { 0x33ffffff, 0xffffffff, 0x33ffffff },
+						null, Shader.TileMode.CLAMP);
+				mPaint.setShader(mLinearGradient);
+				mGradientMatrix = new Matrix();
+			}
+		}
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas) {
-		mMatrix.setTranslate(mXoffSet, 0); ;
-		mLinearShader.setLocalMatrix(mMatrix);
-		mPaint.setShader(mLinearShader) ;
-		canvas.drawText(mShowText, 100, 100, mPaint);
+		if (mAnimating && mGradientMatrix != null) {
+			mGradientMatrix.setTranslate(mTranslate, 0);
+			mLinearGradient.setLocalMatrix(mGradientMatrix);
+		}
+		super.onDraw(canvas);
 	}
 
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-		mHandler.sendEmptyMessage(0x123);
+		mHandler.post(mRefresh) ;
 	}
 
-	private Handler mHandler = new Handler() {
+	private Handler mHandler = new Handler() ;
+	private Runnable mRefresh = new Runnable() {
 		@Override
-		public void handleMessage(Message msg) {
-			if (msg.what == 0x123) {
-				if (mXoffSet > mTextWidth) {
-					mXoffSet = -10 ;
-				}
-				mXoffSet++ ;
-				// 刷新View
-				invalidate();
-				mHandler.sendEmptyMessageDelayed(0x123, 10) ;
+		public void run() {
+			mTranslate += mViewWidth / 20;
+			if (mTranslate > 2 * mViewWidth) {
+				mTranslate = -mViewWidth;
 			}
-		};
-	};
-
-	@Override
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-	}
+			invalidate();
+			mHandler.postDelayed(mRefresh, 50) ;
+		}
+	} ;
 }
