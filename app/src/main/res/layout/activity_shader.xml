@@ -21,10 +21,15 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"/>-->
 
-    <com.study.shenxing.caesar.shader.SlideTextView2
+    <!--<com.study.shenxing.caesar.shader.SlideTextView2
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="36sp"
         android:background="@drawable/round_background"
-        android:text="Slide to unlock" />
+        android:text="Slide to unlock" />-->
+
+
+    <com.study.shenxing.caesar.shader.XfermodeView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

@@ -70,7 +70,8 @@ public class ShderView extends View {
         mLinearGradient = new LinearGradient(-200, 0, 0, 0,
                 new int[] { 0x33ffffff, 0xffffffff, 0x33ffffff },
                 new float[] { 0, 0.5f, 1 }, Shader.TileMode.CLAMP);
-        mRadialShader = new RadialGradient(50, 50, 100, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, null, Shader.TileMode.REPEAT);
+//        mRadialShader = new RadialGradient(50, 50, 100, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, null, Shader.TileMode.REPEAT);
+        mRadialShader = new RadialGradient(500, 500, 500, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, new float[]{0.5f, 0.8f, 1.0f}, Shader.TileMode.REPEAT);
         mSweepShader = new SweepGradient(500, 500, new int[]{Color.RED, Color.BLUE, Color.GREEN}, null);
         mComposeShader = new ComposeShader(mBitmapShader, mLinearShader, PorterDuff.Mode.DST_IN);
 
@@ -91,12 +92,12 @@ public class ShderView extends View {
         canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);*/
         mLinearGradient.setLocalMatrix(mMatrix);
 //        mPaint.setShader(mLinearGradient);
-        mPaint.setTextSize(48);
-        canvas.drawText("Slide to unlock", 100, 100, mPaint);
+//        mPaint.setTextSize(48);
+//        canvas.drawText("Slide to unlock", 100, 100, mPaint);
 //        canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);
 
-        /*mPaint.setShader(mRadialShader) ;
-        canvas.drawRect(new Rect(0, 760, 1000, 1000), mPaint);*/
+        mPaint.setShader(mRadialShader) ;
+        canvas.drawRect(new Rect(0, 0, 1000, 1000), mPaint);
         /*mSweepShader.setLocalMatrix(mMatrix);
         mPaint.setShader(mSweepShader);
         canvas.drawRect(new Rect(0, 0, 1000, 1000), mPaint);*/
