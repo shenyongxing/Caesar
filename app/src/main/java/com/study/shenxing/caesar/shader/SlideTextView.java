@@ -16,6 +16,10 @@ import android.os.Message;
 import android.util.AttributeSet;
 import android.view.View;
 
+/**
+ * 网上copy， 该种方式是手动调整渐变颜色中的颜色位移来形成动画
+ * 估计该作者不知道有setLocalMatrix的接口。 参见SlideTextView2.java，该类更好了的利用Matrix，简化了动画操作。
+ */
 @SuppressLint("DrawAllocation")
 public class SlideTextView extends View {
 	private String showText = "向右滑动来解锁";
