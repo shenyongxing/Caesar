@@ -61,9 +61,11 @@ public class ShderView extends View {
         // Shader.TileMode.CLAMP重复延伸边缘的颜色.
         mBitmapShader = new BitmapShader(bitmap, Shader.TileMode.MIRROR, Shader.TileMode.CLAMP) ;
         mLinearShader = new LinearGradient(0, 0, 1000, 500, new int[]{Color.RED, Color.GREEN, Color.BLUE}, new float[]{0.5f, 0.2f, 1.0f}, Shader.TileMode.REPEAT);
-        mRadialShader = new RadialGradient(50, 50, 100, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, null, Shader.TileMode.REPEAT);
-        mSweepShader = new SweepGradient(500, 1010, new int[]{Color.RED, Color.BLUE, Color.GREEN}, null);
-        mComposeShader = new ComposeShader(mBitmapShader, mLinearShader, PorterDuff.Mode.DST_IN);
+//        mRadialShader = new RadialGradient(500, 500, 500, Color.RED, Color.BLUE, Shader.TileMode.REPEAT);
+        mRadialShader = new RadialGradient(500, 500, 500, new int[]{Color.RED, Color.GREEN, Color.BLUE}, new float[]{0.5f, 0.8f, 1.0f},  Shader.TileMode.MIRROR);
+        mSweepShader = new SweepGradient(500, 500, new int[]{Color.RED, Color.BLUE, Color.GREEN}, new float[]{0.5f, 0.8f, 1.0f});
+//        mSweepShader = new SweepGradient(500, 500, Color.RED, Color.BLUE);
+        mComposeShader = new ComposeShader(mBitmapShader, mLinearShader, PorterDuff.Mode.MULTIPLY);
 
         mPaint = new Paint() ;
         mMatrix = new Matrix() ;
@@ -80,17 +82,17 @@ public class ShderView extends View {
         /*mPaint.setShader(mBitmapShader) ;
         canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);*/
 
-        mPaint.setShader(mLinearShader);
-        canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);
+        /*mPaint.setShader(mLinearShader);
+        canvas.drawRect(new Rect(0, 0, 1000, 500), mPaint);*/
 
         /*mPaint.setShader(mRadialShader) ;
-        canvas.drawRect(new Rect(0, 760, 1000, 1000), mPaint);*/
+        canvas.drawRect(new Rect(0, 0, 1000, 1000), mPaint);*/
 
         /*mPaint.setShader(mSweepShader);
-        canvas.drawCircle(500, 1010, 100, mPaint);*/
+        canvas.drawRect(new Rect(0, 0, 1000, 1000), mPaint);*/
 
-        /*mPaint.setShader(mComposeShader) ;
-        canvas.drawRect(new Rect(0, 1020, 1000, 1200), mPaint);*/
+        mPaint.setShader(mComposeShader) ;
+        canvas.drawRect(new Rect(0, 0, 1000, 1000), mPaint);
     }
 
     @Override

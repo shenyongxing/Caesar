@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -71,8 +72,13 @@ public class MainActivity extends ListActivity {
         if (list != null && list.size() != 0) {
             for (int i = 0; i < list.size(); i++) {
                 ResolveInfo resolveInfo = list.get(i) ;
-                if (resolveInfo.activityInfo.name.endsWith(activityName)) {
-                    return resolveInfo.activityInfo.name ;
+
+                String activityInfoStr = resolveInfo.activityInfo.name ;
+                String[] temp = activityInfoStr.split("\\.") ;
+                if (!TextUtils.isEmpty(temp[temp.length - 1])) {
+                    if (temp[temp.length - 1].equals(activityName)) {
+                        return activityInfoStr ;
+                    }
                 }
             }
 
@@ -107,5 +113,6 @@ public class MainActivity extends ListActivity {
         addItem("Work demo", "ListDemoActivity");
         addItem("DataBase", "DatabaseDemoActivity");
         addItem("Intent的常用用法", "IntentCommonUseActivity");
+        addItem("ListView用法", "ListViewActivity");
     }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.study.shenxing.caesar">
+    package="com.study.shenxing.caesar" >
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
@@ -9,10 +9,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,7 +21,7 @@
         </activity>
         <activity
             android:name=".fragment.FragmentDemoActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".share.ShareDataActivity"
-            android:label="@string/title_activity_share_data">
+            android:label="@string/title_activity_share_data" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,7 +39,7 @@
         </activity>
         <activity
             android:name=".graphic.MatrixDemo"
-            android:label="@string/title_activity_matrix_demo">
+            android:label="@string/title_activity_matrix_demo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +48,7 @@
         </activity>
         <activity
             android:name=".roundimage.RoundImageActivity"
-            android:label="@string/title_activity_round_image">
+            android:label="@string/title_activity_round_image" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,21 +57,21 @@
         </activity>
         <activity
             android:name=".activitylifecycle.ActivityA"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitylifecycle.ActivityB">
+        <activity android:name=".activitylifecycle.ActivityB" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitylifecycle.ActivityC">
+        <activity android:name=".activitylifecycle.ActivityC" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -80,14 +80,14 @@
         </activity>
         <activity
             android:name=".activitylifecycle.DialogActivity"
-            android:theme="@android:style/Theme.Dialog">
+            android:theme="@android:style/Theme.Dialog" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".stickylistview.StickyListViewActivity">
+        <activity android:name=".stickylistview.StickyListViewActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -96,7 +96,7 @@
         </activity>
         <activity
             android:name=".unsorted.ThemeWallpaperActivity"
-            android:label="@string/title_activity_theme_wallpaper">
+            android:label="@string/title_activity_theme_wallpaper" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -105,7 +105,7 @@
         </activity>
         <activity
             android:name=".graphic.animation.CusAnimationActivity"
-            android:label="@string/title_activity_cus_animation">
+            android:label="@string/title_activity_cus_animation" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -114,21 +114,21 @@
         </activity>
         <activity
             android:name=".unsorted.TempActivity"
-            android:label="@string/title_activity_temp">
+            android:label="@string/title_activity_temp" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".customview.CusFlowLayoutActivity">
+        <activity android:name=".customview.CusFlowLayoutActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".waveview.WaveViewActivity">
+        <activity android:name=".waveview.WaveViewActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -137,14 +137,14 @@
         </activity>
         <activity
             android:name=".savedata.SaveDataActivity"
-            android:label="@string/title_activity_save_data">
+            android:label="@string/title_activity_save_data" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".Hacks50Activity">
+        <activity android:name=".Hacks50Activity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -153,7 +153,7 @@
         </activity>
         <activity
             android:name=".practise50hacks.Hack2Activity"
-            android:label="@string/title_activity_hack2">
+            android:label="@string/title_activity_hack2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -162,7 +162,7 @@
         </activity>
         <activity
             android:name=".practise.SharePreferencesActivity"
-            android:label="@string/title_activity_share_preferences">
+            android:label="@string/title_activity_share_preferences" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -171,7 +171,7 @@
         </activity>
         <activity
             android:name=".hyperbolicspiral.HyperbolicAnimationActivity"
-            android:label="@string/title_activity_hyperbolic_animation">
+            android:label="@string/title_activity_hyperbolic_animation" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -181,7 +181,7 @@
         <activity
             android:name=".materialloadingprogressbar.MaterialProgressActivity"
             android:label="@string/title_activity_material_progress"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -190,7 +190,7 @@
         </activity>
         <activity
             android:name=".test.TestActivity"
-            android:label="@string/title_activity_test">
+            android:label="@string/title_activity_test" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -199,7 +199,7 @@
         </activity>
         <activity
             android:name=".viewflip.ViewFlipperActivity"
-            android:label="@string/title_activity_view_flipper">
+            android:label="@string/title_activity_view_flipper" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -208,7 +208,7 @@
         </activity>
         <activity
             android:name=".windowmanager.WindowManagerActivity"
-            android:label="@string/title_activity_window_manager">
+            android:label="@string/title_activity_window_manager" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -223,7 +223,7 @@
 
         <activity
             android:name=".shader.ShaderActivity"
-            android:label="@string/title_activity_shader">
+            android:label="@string/title_activity_shader" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -232,23 +232,28 @@
         </activity>
         <activity
             android:name=".work.ListDemoActivity"
-            android:label="@string/title_activity_list_demo">
+            android:label="@string/title_activity_list_demo" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".database.DatabaseDemoActivity">
+        <activity android:name=".database.DatabaseDemoActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".commonintent.IntentCommonUseActivity">
+        <activity android:name=".commonintent.IntentCommonUseActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".listviewdemo.ListViewActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
