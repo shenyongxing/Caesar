@@ -67,13 +67,12 @@ public class ShderView extends View {
         // Shader.TileMode.CLAMP重复延伸边缘的颜色.
         mBitmapShader = new BitmapShader(bitmap, Shader.TileMode.MIRROR, Shader.TileMode.CLAMP) ;
         mLinearShader = new LinearGradient(0, 0, 1000, 500, new int[]{Color.RED, Color.GREEN, Color.BLUE}, new float[]{0.5f, 0.2f, 1.0f}, Shader.TileMode.REPEAT);
-<<<<<<< HEAD
 //        mRadialShader = new RadialGradient(500, 500, 500, Color.RED, Color.BLUE, Shader.TileMode.REPEAT);
         mRadialShader = new RadialGradient(500, 500, 500, new int[]{Color.RED, Color.GREEN, Color.BLUE}, new float[]{0.5f, 0.8f, 1.0f},  Shader.TileMode.MIRROR);
         mSweepShader = new SweepGradient(500, 500, new int[]{Color.RED, Color.BLUE, Color.GREEN}, new float[]{0.5f, 0.8f, 1.0f});
 //        mSweepShader = new SweepGradient(500, 500, Color.RED, Color.BLUE);
         mComposeShader = new ComposeShader(mBitmapShader, mLinearShader, PorterDuff.Mode.MULTIPLY);
-=======
+
         mLinearGradient = new LinearGradient(-200, 0, 0, 0,
                 new int[] { 0x33ffffff, 0xffffffff, 0x33ffffff },
                 new float[] { 0, 0.5f, 1 }, Shader.TileMode.CLAMP);
@@ -81,7 +80,6 @@ public class ShderView extends View {
         mRadialShader = new RadialGradient(500, 500, 500, new int[]{Color.RED, Color.YELLOW, Color.BLUE}, new float[]{0.5f, 0.8f, 1.0f}, Shader.TileMode.REPEAT);
         mSweepShader = new SweepGradient(500, 500, new int[]{Color.RED, Color.BLUE, Color.GREEN}, null);
         mComposeShader = new ComposeShader(mBitmapShader, mLinearShader, PorterDuff.Mode.DST_IN);
->>>>>>> 9bf392634dbc97c9542fa975693a60cbd6e63bdc
 
         mPaint = new Paint() ;
         mMatrix = new Matrix() ;
