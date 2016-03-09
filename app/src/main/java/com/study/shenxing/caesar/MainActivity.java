@@ -12,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.study.shenxing.caesar.network.NetWorkActivity;
 import com.study.shenxing.caesar.shader.ShaderActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 import com.study.shenxing.caesar.work.ListDemoActivity;
@@ -118,5 +119,6 @@ public class MainActivity extends ListActivity {
         addItem("Intent的常用用法", "IntentCommonUseActivity");
         addItem("ListView用法", "ListViewActivity");
         addItem("ScrollView与ListView滑动冲突", "ScrollAndListViewActivity");
+        addItem("网络请求", "NetWorkActivity");
     }
 }
