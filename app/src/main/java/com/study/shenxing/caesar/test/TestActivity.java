@@ -6,6 +6,8 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
+import android.text.Html;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.study.shenxing.caesar.R;
@@ -15,6 +17,7 @@ import com.study.shenxing.caesar.R;
  */
 public class TestActivity extends Activity {
     private HandlerThread mThread ;
+    private TextView mTextView ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +25,9 @@ public class TestActivity extends Activity {
 
         testThreadToast();
         testHandlerThread();
+
+        mTextView = (TextView) findViewById(R.id.test_textview);
+        mTextView.setText(Html.fromHtml(String.format(getResources().getString(R.string.test_html), 10)));
     }
 
     /**********************************************Start Handler及Toast知识********************************************************/

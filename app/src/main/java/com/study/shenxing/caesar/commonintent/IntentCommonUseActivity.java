@@ -1,6 +1,7 @@
 package com.study.shenxing.caesar.commonintent;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -299,6 +300,27 @@ public class IntentCommonUseActivity extends Activity implements Button.OnClickL
                     break;
                 default:
                     break;
+            }
+        }
+    }
+
+    /**
+     * 跳转到浏览器
+     * @param uriString
+     */
+    private void gotoBrowser(String uriString) {
+        if (uriString == null) {
+            return;
+        }
+
+        Uri browserUri = Uri.parse(uriString);
+        if (null != browserUri) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, browserUri);
+            browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            try {
+                startActivity(browserIntent);
+            } catch (ActivityNotFoundException e) {
+                e.printStackTrace();
             }
         }
     }
