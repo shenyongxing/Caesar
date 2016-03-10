@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -26,6 +27,8 @@ public class CusLoadingView extends View {
     private static final float START_ANGLE = 20 ;
     private static final float END_ANGLE = 320 ;
     private float mDeltaAngle ;
+
+    private Drawable mTestDrawable ;
     public CusLoadingView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
@@ -48,6 +51,7 @@ public class CusLoadingView extends View {
         mPaint.setStrokeWidth(3);
         mPaint.setAntiAlias(true);
         startLoadingAnim();
+
     }
 
     @Override
@@ -57,6 +61,10 @@ public class CusLoadingView extends View {
         canvas.save();
         canvas.drawArc(arcRect, mStartAngle, mStartAngle + mDeltaAngle, false, mPaint);
         canvas.restore();
+
+
+
+
         invalidate();
     }
 

@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.study.shenxing.caesar.algorithm.AlgorithmDemoActivity;
 import com.study.shenxing.caesar.network.NetWorkActivity;
 import com.study.shenxing.caesar.shader.ShaderActivity;
+import com.study.shenxing.caesar.utils.DrawUtils;
 import com.study.shenxing.caesar.work.ListDemoActivity;
 
 import java.util.ArrayList;
@@ -35,6 +36,8 @@ public class MainActivity extends ListActivity {
         addItems() ;
         ArrayAdapter<String> activityList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTitle) ;
         setListAdapter(activityList);
+
+        DrawUtils.resetDensity(this);
     }
 
     private void addItem(String title, String activityName) {
@@ -102,7 +105,7 @@ public class MainActivity extends ListActivity {
         addItem("Theme Wallpaper", "ThemeWallpaperActivity");
         addItem("Custom Animation", "CusAnimationActivity");
         addItem("Temp Demo", "TempActivity");
-        addItem("Custom FlowLayout", "CusFlowLayoutActivity");
+        addItem("Custom View", "CusFlowLayoutActivity");
         addItem("Wave View", "WaveViewActivity");
         addItem("Sava data", "SaveDataActivity") ;
         addItem("50 Hacks", "Hacks50Activity");
@@ -116,7 +119,9 @@ public class MainActivity extends ListActivity {
         addItem("DataBase", "DatabaseDemoActivity");
         addItem("Intent的常用用法", "IntentCommonUseActivity");
         addItem("ListView用法", "ListViewActivity");
+        addItem("ScrollView与ListView滑动冲突", "ScrollAndListViewActivity");
         addItem("网络请求", "NetWorkActivity");
         addItem("常用排序", "AlgorithmDemoActivity");
+        addItem("xml解析", "XmlParserActivity");
     }
 }
