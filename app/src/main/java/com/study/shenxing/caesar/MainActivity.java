@@ -120,5 +120,6 @@ public class MainActivity extends ListActivity {
         addItem("ListView用法", "ListViewActivity");
         addItem("ScrollView与ListView滑动冲突", "ScrollAndListViewActivity");
         addItem("网络请求", "NetWorkActivity");
+        addItem("xml解析", "XmlParserActivity");
     }
 }

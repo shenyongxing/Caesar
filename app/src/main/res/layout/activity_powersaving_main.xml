@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FF434A54">
 
-    <com.gto.zero.zboost.function.powersaving.view.anim.PowerSavingAnimView
+    <com.study.shenxing.caesar.chargelock.view.anim.PowerSavingAnimView
         android:id="@+id/power_saving_anim_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -210,21 +210,21 @@
             android:textColor="@color/white"
             android:textSize="14dp"/>
 
-        <com.gto.zero.zboost.function.powersaving.view.TriangleView
+        <com.study.shenxing.caesar.chargelock.view.TriangleView
             android:id="@+id/power_saving_mode_triangle_speed"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_below="@id/power_saving_mode_instruction_text"
             android:layout_marginLeft="30dp"/>
 
-        <com.gto.zero.zboost.function.powersaving.view.TriangleView
+        <com.study.shenxing.caesar.chargelock.view.TriangleView
             android:id="@+id/power_saving_mode_triangle_contiuous"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_below="@id/power_saving_mode_instruction_text"
             android:layout_centerHorizontal="true"/>
 
-        <com.gto.zero.zboost.function.powersaving.view.TriangleView
+        <com.study.shenxing.caesar.chargelock.view.TriangleView
             android:id="@+id/power_saving_mode_triangle_trickle"
             android:layout_width="20dp"
             android:layout_height="20dp"
@@ -233,7 +233,7 @@
             android:layout_marginRight="30dp"/>
     </RelativeLayout>
 
-    <com.gto.zero.zboost.function.powersaving.view.ShimmerTextView
+    <com.study.shenxing.caesar.chargelock.view.ShimmerTextView
         android:id="@+id/power_saving_unlock_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -272,7 +272,7 @@
         android:layout_below="@id/power_saving_process_text_container"
         >
 
-        <com.gto.zero.zboost.common.ui.RoundRelativeLayout
+        <com.study.shenxing.caesar.chargelock.view.RoundRelativeLayout
             android:id="@+id/power_saving_ad_notice"
             android:layout_width="294dp"
             android:layout_height="172dp"
@@ -303,7 +303,7 @@
                 android:textStyle="bold"
                 />
 
-        </com.gto.zero.zboost.common.ui.RoundRelativeLayout>
+        </com.study.shenxing.caesar.chargelock.view.RoundRelativeLayout>
     </RelativeLayout>
 
 </RelativeLayout>

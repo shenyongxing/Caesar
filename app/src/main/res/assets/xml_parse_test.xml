@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<hello>
+     <a name="emp">
+          <b>
+               <name>shenxing</name>
+               <age>25</age>
+               <sex>male</sex>
+               <addr>guangzhou</addr>
+
+          </b>
+
+          <c>
+               <name>shenling</name>
+               <age>26</age>
+               <sex>female</sex>
+               <addr>wuhan</addr>
+
+          </c>
+
+     </a>
+     <d name="stu">
+          <e>
+               <name>xiaoshenxing</name>
+               <age>13</age>
+               <sex>male</sex>
+               <addr>wuhan</addr>
+
+          </e>
+
+          <f>
+               <name>xiaoshenling</name>
+               <age>12</age>
+               <sex>female</sex>
+               <addr>wuhan</addr>
+
+          </f>
+
+     </d>
+</hello>
