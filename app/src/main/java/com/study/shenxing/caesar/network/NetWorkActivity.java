@@ -8,8 +8,10 @@ import android.widget.TextView;
 
 import com.study.shenxing.caesar.R;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -89,6 +91,22 @@ public class NetWorkActivity extends AppCompatActivity {
         message.what = 1 ;
         message.obj = resultData ;
         mHandler.sendMessage(message) ;
+    }
+
+    private String readInputStream(InputStream inputStream) {
+        String result = "" ;
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream) ;
+        try {
+            byte[] content = new byte[inputStream.available()];
+            int k = 0 ;
+            while ((k = bufferedInputStream.read(content, 0 ,content.length)) != -1) {
+                result = new String(content, "utf-8") ;
+            }
+            return result ;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "" ;
     }
 }
 
