@@ -22,7 +22,6 @@ public class TestActivity2 extends Activity {
     }
 
     // 这个是系统回调的
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);

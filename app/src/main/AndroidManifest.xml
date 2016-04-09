@@ -275,15 +275,18 @@
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <!--<activity
+        <!--
+            <activity
             android:name=".chargelock.activity.PowerSavingActivity"
             android:excludeFromRecents="true"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:taskAffinity="com.gau.go.launcherex.gowidget.gopowermaster.lockscreen"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />-->
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
+        -->
 
-        <!--<service android:name=".chargelock.ChargeLockService" />-->
+
+        <!-- <service android:name=".chargelock.ChargeLockService" /> -->
 
         <activity android:name=".xmlparse.XmlParserActivity">
             <intent-filter>
@@ -292,7 +295,21 @@
                 <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
-        <activity android:name=".algorithm.AlgorithmDemoActivity" >
+        <activity android:name=".algorithm.AlgorithmDemoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".work.GridAnimActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".measuretest.MeasureTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

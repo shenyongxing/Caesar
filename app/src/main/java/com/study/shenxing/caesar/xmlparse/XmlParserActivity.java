@@ -9,9 +9,7 @@ import com.study.shenxing.caesar.R;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
-import org.xmlpull.v1.XmlPullParserFactory;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -22,10 +20,14 @@ public class XmlParserActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_xml_parser);
 
+        // 如何读取assets文件夹文件??? 一直没成功
 //        InputStream is = getAssetsStream("xml_parse_test.xml");
         // 网络资料：上面代码适用于Eclipse不适用于Android studio 下面的代码
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream("/src/main/assets/xml_parse_test.xml");
+//        InputStream is = this.getClass().getClassLoader().getResourceAsStream("/src/main/assets/xml_parse_test.xml");
+//        testParse(is);
+        InputStream is = getResources().openRawResource(R.raw.xml_parse_test) ;
         testParse(is);
+
     }
 
     /**
@@ -58,8 +60,12 @@ public class XmlParserActivity extends Activity {
 
                 } else if (eventType == XmlPullParser.START_TAG) {
                     String name = parser.getName() ;
-                    Log.i("shenxing", "name : " + name) ;
+                    if ("name".equals(name) || "sex".equals(name) || "age".equals(name)) {
+                        Log.i("shenxing", "tag : " + name + ", value : " + parser.nextText()) ;
+                    }
                 } else if (eventType == XmlPullParser.END_TAG) {
+
+                } else if (eventType == XmlPullParser.TEXT) {
 
                 } else if (eventType == XmlPullParser.END_DOCUMENT) {
 

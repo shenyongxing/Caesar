@@ -16,6 +16,7 @@ import com.study.shenxing.caesar.algorithm.AlgorithmDemoActivity;
 import com.study.shenxing.caesar.network.NetWorkActivity;
 import com.study.shenxing.caesar.shader.ShaderActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
+import com.study.shenxing.caesar.work.GridAnimActivity;
 import com.study.shenxing.caesar.work.ListDemoActivity;
 
 import java.util.ArrayList;
@@ -123,5 +124,7 @@ public class MainActivity extends ListActivity {
         addItem("网络请求", "NetWorkActivity");
         addItem("常用排序", "AlgorithmDemoActivity");
         addItem("xml解析", "XmlParserActivity");
+        addItem("gridview消失动画", "GridAnimActivity");
+        addItem("View Measure实践", "MeasureTestActivity");
     }
 }
