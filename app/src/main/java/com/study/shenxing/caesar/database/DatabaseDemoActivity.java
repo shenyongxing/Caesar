@@ -32,7 +32,7 @@ public class DatabaseDemoActivity extends AppCompatActivity {
         String decrypt_right =  CryptTool.decrypt(cryptString, "go") ;
         Log.i("shenxing", "解密后： error :" + decrypt_error + ", " + decrypt_right) ;
 
-
+        // add by later, studing google www.develop.com
     }
 
     private Cursor queryResidue(SQLiteDatabase db) {

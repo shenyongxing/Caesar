@@ -34,23 +34,31 @@ public class SaveDataActivity extends AppCompatActivity {
 
         File fileDir = getFilesDir();
         File cacheDir = getCacheDir();
+        File externalDir = getExternalCacheDir();
 
         Log.i("shenxing", "fileDir : " + fileDir.getAbsolutePath());
         Log.i("shenxing", "cacheDir : " + cacheDir.getAbsolutePath());
+        Log.i("shenxing", "externalDir : " + externalDir.getAbsolutePath());
         // 上面log打印的日志如下
 //        fileDir : /data/data/com.study.shenxing.caesar/files
 //        cacheDir : /data/data/com.study.shenxing.caesar/cache
+//        externalDir在nexus 6p上的测试结果为:/storage/emulated/0/Android/data/com.study.shenxing.caesar/cache
 
         String filename = "shenxing";
         String msg = "Hello world! 有中文怎么办？";
         writeDataToFile(filename, msg);
+
+        // 通过官网和实践确认,openFileOutput和openFileInput所保存的文件在
+        // /data/data/com.study.shenxing.caesar/files 目录下,也即getFilesDir()目录.
+        String testPath = "/data/data/com.study.shenxing.caesar/files/" + filename;
+        File file = new File(testPath);
+        Log.i("shenxing", "is file exist:" + file.exists());
         String result = readDataFromFile(filename) ;
         Log.i("Caesar", "result : " + result) ;
 
         FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(this);
         insert(mDbHelper);
         query(mDbHelper) ;
-
     }
 
     private void createCusCacheFile(Context context, String filename) {

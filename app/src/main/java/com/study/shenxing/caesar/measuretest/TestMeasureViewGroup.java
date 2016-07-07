@@ -6,8 +6,6 @@ import android.widget.LinearLayout;
 
 import com.study.shenxing.caesar.R;
 
-import java.io.LineNumberReader;
-
 /**
  * Created by shenxing on 16/4/8.
  * 测量过程优化实践

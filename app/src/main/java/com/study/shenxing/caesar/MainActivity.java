@@ -6,18 +6,12 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.study.shenxing.caesar.algorithm.AlgorithmDemoActivity;
-import com.study.shenxing.caesar.network.NetWorkActivity;
-import com.study.shenxing.caesar.shader.ShaderActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
-import com.study.shenxing.caesar.work.GridAnimActivity;
-import com.study.shenxing.caesar.work.ListDemoActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -126,5 +120,15 @@ public class MainActivity extends ListActivity {
         addItem("xml解析", "XmlParserActivity");
         addItem("gridview消失动画", "GridAnimActivity");
         addItem("View Measure实践", "MeasureTestActivity");
+        addItem("RecycleView实践", "RecyclerViewActivity");
+        addItem("MeterialDesign", "MeterialDesignDemo");
+        addItem("Transition", "SceneTransitionsActivity");
+    }
+
+    private boolean isValidate(String name) {
+        if ("shenxing".equals(name)) {
+            return true;
+        }
+        return false;
     }
 }

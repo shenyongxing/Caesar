@@ -9,4 +9,10 @@
     tools:showIn="@layout/activity_save_data"
     tools:context="com.study.shenxing.caesar.savedata.SaveDataActivity">
 
+    <TextView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Don't look at me. Just read the code to learn more"/>
+
 </RelativeLayout>

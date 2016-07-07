@@ -8,4 +8,8 @@
     <dimen name="font_small">10dp</dimen>
 
     <dimen name="slide_to_unlock_textsize">24sp</dimen>
+
+    <!--display bitmap demo-->
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    <dimen name="image_thumbnail_size">100dp</dimen>
 </resources>
