@@ -106,7 +106,7 @@ public class MainActivity extends ListActivity {
         addItem("50 Hacks", "Hacks50Activity");
         addItem("SharePreference", "SharePreferencesActivity");
         addItem("双曲螺线动画", "HyperbolicAnimationActivity");
-        addItem("知识点测试", "TestActivity");
+        addItem("知识点测试", "TestActivity2");
         addItem("ViewFlipper", "ViewFlipperActivity");
         addItem("悬浮窗demo", "WindowManagerActivity");
         addItem("Shader", "ShaderActivity");
@@ -123,6 +123,7 @@ public class MainActivity extends ListActivity {
         addItem("RecycleView实践", "RecyclerViewActivity");
         addItem("MeterialDesign", "MeterialDesignDemo");
         addItem("Transition", "SceneTransitionsActivity");
+        addItem("Scale 锚点问题", "ScalePivotActivity");
     }
 
     private boolean isValidate(String name) {

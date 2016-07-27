@@ -1,6 +1,7 @@
 package com.study.shenxing.caesar.test;
 
 import android.app.Activity;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
@@ -28,6 +29,12 @@ public class TestActivity extends Activity {
 
         mTextView = (TextView) findViewById(R.id.test_textview);
         mTextView.setText(Html.fromHtml(String.format(getResources().getString(R.string.test_html), 10)));
+
+
+        Resources res = getResources();
+        String songsFound = res.getQuantityString(R.plurals.numberOfSongsAvailable, 1, 1);
+
+//        mTextView.setText(songsFound);
     }
 
     /**********************************************Start Handler及Toast知识********************************************************/
