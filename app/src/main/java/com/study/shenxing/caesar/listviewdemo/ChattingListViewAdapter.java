@@ -1,11 +1,15 @@
 package com.study.shenxing.caesar.listviewdemo;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.study.shenxing.caesar.R;
@@ -19,10 +23,18 @@ public class ChattingListViewAdapter extends BaseAdapter {
     private Context mContext ;
     private List<ChatItemListViewBean> mData ;
     private LayoutInflater mLayoutInflater ;
-    public ChattingListViewAdapter(Context context, List<ChatItemListViewBean> data) {
+
+    private Animation mAnimation;   // 进入listView的动画
+    private boolean mIsScrollDown;  // 是否向下滑动
+
+    private ListView mListView;
+
+    public ChattingListViewAdapter(Context context, ListView listView, List<ChatItemListViewBean> data) {
         mContext = context ;
         mData = data ;
         mLayoutInflater = LayoutInflater.from(context) ;
+        mAnimation = AnimationUtils.loadAnimation(context, R.anim.slide_in_bottom);
+        mListView = listView;
     }
 
     @Override
@@ -54,6 +66,19 @@ public class ChattingListViewAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+
+        int count = mListView.getChildCount();
+        for (int i = 0; i < count; i++) {
+            View childView = mListView.getChildAt(i);
+            childView.clearAnimation();
+        }
+        if (mIsScrollDown) {
+            convertView.startAnimation(mAnimation);
+            Log.i("sh", "onScrollDown &&&&&&&&&&&&&&&&&&&&&&&");
+        } else {
+            Log.i("sh", "onScrollUp");
+        }
+
         viewHolder.mIcon.setImageBitmap(mData.get(position).getmIcon());
         viewHolder.mMessage.setText(mData.get(position).getmMessage());
 
@@ -73,6 +98,10 @@ public class ChattingListViewAdapter extends BaseAdapter {
     @Override
     public int getItemViewType(int position) {
         return mData.get(position).getmType();
+    }
+
+    public void setIsScrollDown(boolean isScrollDown) {
+        mIsScrollDown = isScrollDown;
     }
 
      public static class ViewHolder {

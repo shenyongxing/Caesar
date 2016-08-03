@@ -48,6 +48,9 @@ public class ViewLifeCycle extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         Log.i(TAG, "onMeasure") ;
+
+
+        setMeasuredDimension(300, 300);
     }
 
     @Override
@@ -60,7 +63,7 @@ public class ViewLifeCycle extends View {
     protected void onDraw(Canvas canvas) {
         Path path = new Path() ;
         path.reset();
-        path.addRoundRect(0f, 0f, 200f, 200f, 50f, 50f, Path.Direction.CW);
+//        path.addRoundRect(0f, 0f, 200f, 200f, 50f, 50f, Path.Direction.CW);
         canvas.clipPath(path) ;
         super.onDraw(canvas);
         Log.i(TAG, "onDraw") ;

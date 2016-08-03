@@ -86,10 +86,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.study.shenxing.caesar.customview.ViewLifeCycle
+    <!--<com.study.shenxing.caesar.customview.ViewLifeCycle
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@color/test02"/>
+        android:background="@color/test02"/>-->
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset"/>
+
+    <com.study.shenxing.caesar.customview.PaintApiTestView
+        android:id="@+id/graphic"
+        android:layout_below="@id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 

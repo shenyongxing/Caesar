@@ -39,7 +39,7 @@ public class RoundRelativeLayout extends RelativeLayout {
         }
 
         canvas.save();
-        canvas.drawColor(0xff00ffff);
+//        canvas.drawColor(0xff00ffff);
         mPath.reset();
         mPath.addRoundRect(mCanvasRect, 50, 50, Path.Direction.CCW);
         mPath.close();
@@ -50,7 +50,7 @@ public class RoundRelativeLayout extends RelativeLayout {
     }
 
     public void drawScene(Canvas canvas) {
-        canvas.drawColor(0xff00ff00);
+//        canvas.drawColor(0xff00ff00);
     }
 
     @Override

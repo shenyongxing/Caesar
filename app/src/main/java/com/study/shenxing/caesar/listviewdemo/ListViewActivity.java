@@ -22,6 +22,11 @@ public class ListViewActivity extends Activity {
     private ListView mListView ;
     private ImageView mEmptyView ;
 
+
+    private boolean mIsScrollDown;
+    private int mLastVisibleItem;
+    private int mFirstItemTop;
+    private ChattingListViewAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +67,7 @@ public class ListViewActivity extends Activity {
             }
         });*/
 
-        ChattingListViewAdapter adapter = new ChattingListViewAdapter(this, createTestData()) ;
+        adapter = new ChattingListViewAdapter(this, mListView, createTestData()) ;
         mListView.setAdapter(adapter);
 
 
@@ -97,6 +102,27 @@ public class ListViewActivity extends Activity {
                 int a = mListView.getLastVisiblePosition() - mListView.getFirstVisiblePosition() + 1;   // 则a的值与visibleItemCount相等
                 Log.i("shenxing", "可见的item的有" + visibleItemCount + "个" + ", a : " + a);
 
+
+                View childView = view.getChildAt(0);
+                if (childView == null) {
+                    return;
+                }
+                int top = childView.getTop();
+
+                if (firstVisibleItem < mLastVisibleItem) {
+                    mIsScrollDown = false;
+                } else {
+                    mIsScrollDown = firstVisibleItem > mLastVisibleItem || top < mFirstItemTop;
+                }
+
+                /**
+                 * 仅仅用 mIsScrollDown = firstVisibleItem > mLastVisibleItem || top < mFirstItemTop; 判断是否向下滑动不准确
+                 * 根据打印日志看下滑时mIsScrollDown居然也为true
+                 * 所以采用以上的代码
+                 */
+                adapter.setIsScrollDown(mIsScrollDown);
+                mLastVisibleItem = firstVisibleItem;
+                mFirstItemTop = top;
             }
 
             // onScroll方法会一直被回调
@@ -127,7 +153,7 @@ public class ListViewActivity extends Activity {
     private List<ChatItemListViewBean> createTestData() {
         List<ChatItemListViewBean> data = new ArrayList<ChatItemListViewBean>() ;
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.setting_nextlauncher) ;
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 50; i++) {
             ChatItemListViewBean bean = new ChatItemListViewBean() ;
             bean.setmIcon(bitmap);
             bean.setmMessage("hello world " + i);

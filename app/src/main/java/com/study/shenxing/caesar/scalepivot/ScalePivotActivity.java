@@ -1,7 +1,11 @@
 package com.study.shenxing.caesar.scalepivot;
 
+import android.animation.ArgbEvaluator;
+import android.animation.LayoutTransition;
+import android.animation.ValueAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.ScaleAnimation;
@@ -26,15 +30,16 @@ public class ScalePivotActivity extends AppCompatActivity {
     private View.OnClickListener testClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            doAnimation();
+            doScaleAnimation();
+            doColorAniamtor();
         }
     };
 
-    private void doAnimation() {
+    private void doScaleAnimation() {
         float startX = 1.0f;
-        float endX = 1.5f;
+        float endX = 0.5f;
         float startY = 1.0f;
-        float endY = 1.5f;
+        float endY = 0.5f;
         float pivotX = 0.5f;
         float pivotY = 0.5f;
         ScaleAnimation sa = new ScaleAnimation(startX, endX, startY, endY,
@@ -42,6 +47,21 @@ public class ScalePivotActivity extends AppCompatActivity {
         sa.setDuration(5000);
         sa.setFillAfter(true);
         mTestImageView.startAnimation(sa);
+    }
+
+    private void doColorAniamtor() {
+        ValueAnimator colorAnimator = ValueAnimator.ofInt(0xffffff00, 0xff0000ff);
+        colorAnimator.setEvaluator(new ArgbEvaluator());
+        colorAnimator.setDuration(1000);
+        colorAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int color = (int) animation.getAnimatedValue();
+                Log.i("sh", "onAnimationUpdate..." + color);
+                mTestImageView.setBackgroundColor(color);
+            }
+        });
+        colorAnimator.start();
     }
 
 }
