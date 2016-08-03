@@ -346,8 +346,14 @@
                 <category android:name="android.intent.category.STUDY_DEMO"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".scalepivot.ScalePivotActivity">
+        <activity android:name=".scalepivot.ScalePivotActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".eventbusdemo.EventBusDemo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

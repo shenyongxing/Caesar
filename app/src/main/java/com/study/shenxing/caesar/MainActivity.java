@@ -124,6 +124,7 @@ public class MainActivity extends ListActivity {
         addItem("MeterialDesign", "MeterialDesignDemo");
         addItem("Transition", "SceneTransitionsActivity");
         addItem("Scale 锚点问题", "ScalePivotActivity");
+        addItem("EventBus demo", "EventBusDemo");
     }
 
     private boolean isValidate(String name) {
