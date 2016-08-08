@@ -1,16 +1,22 @@
 package com.study.shenxing.caesar.customview;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SeekBar;
 
 import com.study.shenxing.caesar.R;
 
 public class CusFlowLayoutActivity extends AppCompatActivity {
     private Button mReset;
+    private SeekBar mSeekBar;
 //    private WaveView mGraphicView;
-    private PaintApiTestView mPaintApiTestView;
+//    private PaintApiTestView mPaintApiTestView;
+    private ColorMatrixView mColorMatrixView;
+    private float mAngle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,11 +27,31 @@ public class CusFlowLayoutActivity extends AppCompatActivity {
         mReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mPaintApiTestView != null) {
-                    mPaintApiTestView.startAnim();
-                }
+
             }
         });
-        mPaintApiTestView = (PaintApiTestView) findViewById(R.id.graphic);
+
+        mSeekBar = (SeekBar) findViewById(R.id.sb_seek_bar);
+        mSeekBar.setProgress(50);
+        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mReset.setText((progress - 50) / 50.f * 180 + " ");
+                mAngle = (float) ((progress - 50) / 50.f * 180 * Math.PI  / 180);
+                Log.i("sh", "mAngle:" + mAngle);
+                mColorMatrixView.setAngle(mAngle);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        mColorMatrixView = (ColorMatrixView) findViewById(R.id.graphic);
     }
 }
