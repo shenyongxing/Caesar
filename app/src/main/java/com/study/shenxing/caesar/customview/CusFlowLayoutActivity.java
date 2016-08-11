@@ -31,27 +31,27 @@ public class CusFlowLayoutActivity extends AppCompatActivity {
             }
         });
 
-        mSeekBar = (SeekBar) findViewById(R.id.sb_seek_bar);
-        mSeekBar.setProgress(50);
-        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mReset.setText((progress - 50) / 50.f * 180 + " ");
-                mAngle = (float) ((progress - 50) / 50.f * 180 * Math.PI  / 180);
-                Log.i("sh", "mAngle:" + mAngle);
-                mColorMatrixView.setAngle(mAngle);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-        mColorMatrixView = (ColorMatrixView) findViewById(R.id.graphic);
+//        mSeekBar = (SeekBar) findViewById(R.id.sb_seek_bar);
+//        mSeekBar.setProgress(50);
+//        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+//            @Override
+//            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+//                mReset.setText((progress - 50) / 50.f * 180 + " ");
+//                mAngle = (float) ((progress - 50) / 50.f * 180 * Math.PI  / 180);
+//                Log.i("sh", "mAngle:" + mAngle);
+//                mColorMatrixView.setAngle(mAngle);
+//            }
+//
+//            @Override
+//            public void onStartTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//
+//            @Override
+//            public void onStopTrackingTouch(SeekBar seekBar) {
+//
+//            }
+//        });
+//        mColorMatrixView = (ColorMatrixView) findViewById(R.id.graphic);
     }
 }
