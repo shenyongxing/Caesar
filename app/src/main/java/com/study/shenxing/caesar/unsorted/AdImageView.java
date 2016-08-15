@@ -7,6 +7,7 @@ import android.widget.ImageView;
 /**
  * 广告ImageView
  * Created by sx on 15-8-27.
+ * 这种方式不便于在多处使用,可以加入自定义的字段设定缩放比例
  */
 public class AdImageView extends ImageView {
     private float mScale = 1.0f * 630 / 354 ; // 保持一定的宽高比

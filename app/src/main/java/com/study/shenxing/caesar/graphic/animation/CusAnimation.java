@@ -33,6 +33,7 @@ public class CusAnimation extends Animation {
         Matrix matrix = t.getMatrix();
 //        matrix.preTranslate(100 * interpolatedTime, 100 * interpolatedTime);
 
+        // 注意camera的y轴方向与android坐标系相反
         mCamera.save();
         mCamera.translate(0.0f, 0.0f, (1300 - 1300.0f * interpolatedTime));
         mCamera.rotateY(360 * interpolatedTime);

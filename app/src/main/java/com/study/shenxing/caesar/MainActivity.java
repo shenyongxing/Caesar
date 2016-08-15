@@ -2,10 +2,12 @@ package com.study.shenxing.caesar;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
@@ -13,10 +15,14 @@ import android.widget.ListView;
 
 import com.study.shenxing.caesar.utils.DrawUtils;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import dalvik.system.PathClassLoader;
 
 public class MainActivity extends ListActivity {
     public static final String STUDY_DEMO = "android.intent.category.STUDY_DEMO";
@@ -33,6 +39,9 @@ public class MainActivity extends ListActivity {
         setListAdapter(activityList);
 
         DrawUtils.resetDensity(this);
+
+        // test plugin
+        useDexClassLoader();
     }
 
     private void addItem(String title, String activityName) {
@@ -132,5 +141,50 @@ public class MainActivity extends ListActivity {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 测试:调用其他apk的方法
+     */
+    public void useDexClassLoader() {
+        // 注意第一个参数为action,所以在插件的activity intent-filter中必须添加action和categroy
+        Intent it = new Intent("com.study.shenxing.plugintest", null);
+        PackageManager pm = getPackageManager();
+        List<ResolveInfo> plugIns = pm.queryIntentActivities(it, 0);
+        if (plugIns != null && !plugIns.isEmpty()) {
+            ResolveInfo resolveInfo = plugIns.get(0);
+            ActivityInfo activityInfo = resolveInfo.activityInfo;
+
+            String pkgName = activityInfo.packageName;
+            String dexPath = activityInfo.applicationInfo.sourceDir;
+            String dexOutputDir = activityInfo.applicationInfo.dataDir;
+            String libPath = activityInfo.applicationInfo.nativeLibraryDir;
+            // DexClassLoader 报错:
+            // java.lang.IllegalArgumentException: optimizedDirectory not readable/writable: /data/data/com.study.shenxing.plugintest
+//            DexClassLoader classLoader = new DexClassLoader(dexPath, dexOutputDir, libPath, getClass().getClassLoader());
+            PathClassLoader classLoader = new PathClassLoader(dexPath, libPath, getClass().getClassLoader());
+            try {
+                Class<?> clazz = classLoader.loadClass(pkgName + ".PluginClass");
+                Object obj = clazz.newInstance();
+                Class[] params = new Class[2];
+                params[0] = Integer.TYPE;
+                params[1] = Integer.TYPE;
+                Method method = clazz.getMethod("add", params);
+                Integer result = (Integer) method.invoke(obj, 12, 34);
+                Log.i("plugin", "result :" + result);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            } catch (InvocationTargetException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Log.i("plugin", "There is no plugin exist ");
+        }
     }
 }
