@@ -6,6 +6,9 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.study.shenxing.caesar.aidl.MusicPlayerService;
 import com.study.shenxing.caesar.utils.DrawUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -42,6 +46,14 @@ public class MainActivity extends ListActivity {
 
         // test plugin
         useDexClassLoader();
+        // start service
+//        startAidlTestService();
+//        MusicPlayerService service = new MusicPlayerService();
+        try {
+            invokeRemoteMethod();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     private void addItem(String title, String activityName) {
@@ -186,5 +198,25 @@ public class MainActivity extends ListActivity {
         } else {
             Log.i("plugin", "There is no plugin exist ");
         }
+    }
+
+    // start service
+    public void startAidlTestService() {
+        Intent it = new Intent(this, MusicPlayerService.class);
+        startService(it);
+    }
+
+    private void invokeRemoteMethod() throws RemoteException {
+        IBinder mRemote = null; // Binder驱动中的binder对象
+        String filePath = "/sdcard/love.mp3";
+        int code = 1000;
+        Parcel data = Parcel.obtain();
+        Parcel reply = Parcel.obtain();
+        data.writeInterfaceToken("MusicPlayerService");
+        data.writeString(filePath);
+        mRemote.transact(code, data, reply, 0);     // Binder驱动挂起当前线程,并向服务端发送消息, 0表示双向IPC模式
+        IBinder binder = reply.readStrongBinder();
+        reply.recycle();
+        data.recycle();
     }
 }

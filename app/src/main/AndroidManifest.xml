@@ -360,6 +360,10 @@
                 <category android:name="android.intent.category.STUDY_DEMO"/>
             </intent-filter>
         </activity>
+
+        <Service android:name="com.study.shenxing.caesar.aidl.MusicPlayerService"
+            android:process=":music"/>
+
     </application>
 
 </manifest>

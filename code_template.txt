@@ -1,0 +1,38 @@
+const --> private static final int 
+fbc --> findViewById
+foreach --> for ($i : $data) {$cursor}
+gone --> setVisibility(View.GONE)
+visible --> setVisibility(View.VISIBLE)	
+key --> private static final Stirng KEY_$varible
+rgS --> $resource$.getString(R.string.id)
+Sfmt --> String.format($string, $params)
+Toast --> Toast.make().show;
+ViewConstructors --> view constructor
+
+logd -->Log.d(TAG, );
+loge -->Log.e(TAG, );
+logm -->Log.d(TAG, $methodName and params);
+logr -->Log.d(TAG, $methodName + return value);
+logt -->private static final String TAG = "$className"
+
+appNs --> xmlns:app="http://schemas.android.com/apk/res-auto"
+toolsNs --> xmlns:tools="http://schemas.android.com/tools"
+lh --> android:layout_height="$height$"
+lhw --> android:layout_height="wrap_content"
+lhm --> android:layout_height="match_parent"
+lw
+lww
+lwm
+
+fori --> for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) $END$}
+iter --> for ($ELEMENT_TYPE$ $VAR$ : $ITERABLE_TYPE$) {$END$}
+ifn --> if ($VAR$ == null) {$END$}
+inn --> if ($VAR$ != null) {$END$}
+lazy --> if ($VAR$ == null) {$VAR$ = new $TYPE$($END$);}
+mn --> $VAR$ = Math.min($VAR$, $END$);
+mx --> $VAR$ = Math.max($VAR$, $END$);
+
+psfs --> public static final String
+psfi --> public static final int 
+
+CD --> <![CDATA[$SELECTION$]]>

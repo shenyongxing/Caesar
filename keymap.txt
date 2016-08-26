@@ -1,0 +1,10 @@
+全局搜索 find in path shift+cmd+F
+搜索引用 find usages option+F7
+文件内查找及替换 Replace... cmd+R
+查找下一处 find next/move to next occurrence cmd+G
+全部保存 save all cmd+S
+重命名 rename shift+F6
+提示 show intention actions option+enter
+删除行 delete line cmd+delete
+搜索文件Navigate/File shift+cmd+o
+抽取方法 Method option+cmd+M
