@@ -8,3 +8,5 @@
 删除行 delete line cmd+delete
 搜索文件Navigate/File shift+cmd+o
 抽取方法 Method option+cmd+M
+查找action shift+cmd+A
+大小写转换 shift+cmd+U

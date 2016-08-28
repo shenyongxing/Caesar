@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.study.shenxing.caesar"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.study.shenxing.caesar">
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,168 +15,168 @@
             android:name=".MainActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".fragment.FragmentDemoActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".share.ShareDataActivity"
             android:label="@string/title_activity_share_data">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".graphic.MatrixDemo"
             android:label="@string/title_activity_matrix_demo">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".roundimage.RoundImageActivity"
             android:label="@string/title_activity_round_image">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activitylifecycle.ActivityA"
             android:launchMode="singleTask">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".activitylifecycle.ActivityB">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".activitylifecycle.ActivityC">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".activitylifecycle.DialogActivity"
             android:theme="@android:style/Theme.Dialog">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".stickylistview.StickyListViewActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".unsorted.ThemeWallpaperActivity"
             android:label="@string/title_activity_theme_wallpaper">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".graphic.animation.CusAnimationActivity"
             android:label="@string/title_activity_cus_animation">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".unsorted.TempActivity"
             android:label="@string/title_activity_temp">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".customview.CusFlowLayoutActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".waveview.WaveViewActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".savedata.SaveDataActivity"
             android:label="@string/title_activity_save_data">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".Hacks50Activity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".practise50hacks.Hack2Activity"
             android:label="@string/title_activity_hack2">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".practise.SharePreferencesActivity"
             android:label="@string/title_activity_share_preferences">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".hyperbolicspiral.HyperbolicAnimationActivity"
             android:label="@string/title_activity_hyperbolic_animation">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
@@ -184,104 +184,104 @@
             android:label="@string/title_activity_material_progress"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".test.TestActivity"
             android:label="@string/title_activity_test">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".test.TestActivity2"
             android:label="@string/title_activity_test">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".viewflip.ViewFlipperActivity"
             android:label="@string/title_activity_view_flipper">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".windowmanager.WindowManagerActivity"
             android:label="@string/title_activity_window_manager">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
 
         <service
             android:name=".windowmanager.WindowManagerService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
 
         <activity
             android:name=".shader.ShaderActivity"
             android:label="@string/title_activity_shader">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity
             android:name=".work.ListDemoActivity"
             android:label="@string/title_activity_list_demo">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".database.DatabaseDemoActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".commonintent.IntentCommonUseActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".listviewdemo.ListViewActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".others.ScrollAndListViewActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".network.NetWorkActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <!--
@@ -299,71 +299,80 @@
 
         <activity android:name=".xmlparse.XmlParserActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".algorithm.AlgorithmDemoActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".work.GridAnimActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".measuretest.MeasureTestActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".recycleview.RecyclerViewActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".meterialdesigntest.MeterialDesignDemo">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".transition.SceneTransitionsActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".scalepivot.ScalePivotActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
         <activity android:name=".eventbusdemo.EventBusDemo">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.STUDY_DEMO"/>
+                <category android:name="android.intent.category.STUDY_DEMO" />
             </intent-filter>
         </activity>
 
-        <Service android:name="com.study.shenxing.caesar.aidl.MusicPlayerService"
-            android:process=":music"/>
+        <service
+            android:name="com.study.shenxing.caesar.binder.AidlService"
+            android:process=":music" />
 
+        <activity android:name=".binder.AidlTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.STUDY_DEMO" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

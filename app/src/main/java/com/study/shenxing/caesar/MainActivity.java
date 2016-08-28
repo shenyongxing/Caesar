@@ -16,7 +16,8 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.study.shenxing.caesar.aidl.MusicPlayerService;
+import com.study.shenxing.caesar.binder.AidlService;
+import com.study.shenxing.caesar.binder.AidlTestActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -48,12 +49,12 @@ public class MainActivity extends ListActivity {
         useDexClassLoader();
         // start service
 //        startAidlTestService();
-//        MusicPlayerService service = new MusicPlayerService();
-        try {
-            invokeRemoteMethod();
-        } catch (RemoteException e) {
-            e.printStackTrace();
-        }
+//        AidlService service = new AidlService();
+//        try {
+//            invokeRemoteMethod();
+//        } catch (RemoteException e) {
+//            e.printStackTrace();
+//        }
     }
 
     private void addItem(String title, String activityName) {
@@ -146,6 +147,7 @@ public class MainActivity extends ListActivity {
         addItem("Transition", "SceneTransitionsActivity");
         addItem("Scale 锚点问题", "ScalePivotActivity");
         addItem("EventBus demo", "EventBusDemo");
+        addItem("aidl test", "AidlTestActivity");
     }
 
     private boolean isValidate(String name) {
@@ -202,7 +204,7 @@ public class MainActivity extends ListActivity {
 
     // start service
     public void startAidlTestService() {
-        Intent it = new Intent(this, MusicPlayerService.class);
+        Intent it = new Intent(this, AidlService.class);
         startService(it);
     }
 
@@ -212,7 +214,7 @@ public class MainActivity extends ListActivity {
         int code = 1000;
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
-        data.writeInterfaceToken("MusicPlayerService");
+        data.writeInterfaceToken("AidlService");
         data.writeString(filePath);
         mRemote.transact(code, data, reply, 0);     // Binder驱动挂起当前线程,并向服务端发送消息, 0表示双向IPC模式
         IBinder binder = reply.readStrongBinder();
