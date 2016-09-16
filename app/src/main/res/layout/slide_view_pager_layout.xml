@@ -151,7 +151,7 @@
 
     </LinearLayout>-->
 
-    <com.study.shenxing.caesar.customview.XfermodeView
+    <com.study.shenxing.caesar.customview.ScaleView
         android:layout_below="@id/sb_seek_bar"
         android:layout_width="300dp"
         android:layout_height="300dp"/>

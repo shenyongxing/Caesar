@@ -4,6 +4,7 @@ import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
+import android.util.Log;
 
 /**
  * Created by shenxing on 16/8/27.
@@ -20,7 +21,7 @@ public interface ITestInterface extends IInterface {
      * for server
      */
     public static abstract class Stub extends android.os.Binder implements ITestInterface {
-
+        public static final String TAG = "sh";
         private static final String DESCRIPTOR = "com.study.shenxing.caesar.binder.ITestInterface";
         public Stub() {
             this.attachInterface(this, DESCRIPTOR);
@@ -37,8 +38,10 @@ public interface ITestInterface extends IInterface {
             }
             android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
             if (((iin!=null) && (iin instanceof ITestInterface))) {
+                Log.i(TAG, "**************asInterface: inner process");
                 return ((ITestInterface)iin);
             }
+            Log.i(TAG, "**************asInterface: inter process");
             return new ITestInterface.Stub.Proxy(obj);
         }
 
@@ -101,7 +104,7 @@ public interface ITestInterface extends IInterface {
                 try {
                     _data.writeInterfaceToken(DESCRIPTOR);
                     _data.writeString(name);
-                    mRemote.transact(ITest.Stub.TRANSACTION_setName, _data, _reply, 0);
+                    mRemote.transact(ITestInterface.Stub.TRANSACTION_setName, _data, _reply, 0);
                     _reply.readException();
                 } finally {
                     _reply.recycle();

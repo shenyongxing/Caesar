@@ -17,7 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.study.shenxing.caesar.binder.AidlService;
-import com.study.shenxing.caesar.binder.AidlTestActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -148,6 +147,8 @@ public class MainActivity extends ListActivity {
         addItem("Scale 锚点问题", "ScalePivotActivity");
         addItem("EventBus demo", "EventBusDemo");
         addItem("aidl test", "AidlTestActivity");
+        addItem("test", "BatteryMainPageActivity");
+
     }
 
     private boolean isValidate(String name) {
