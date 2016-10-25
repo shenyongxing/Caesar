@@ -1,9 +1,12 @@
 package com.study.shenxing.caesar.network;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.study.shenxing.caesar.R;
@@ -19,6 +22,8 @@ import java.net.URL;
 
 public class NetWorkActivity extends AppCompatActivity {
     private TextView mResult ;
+    private Button mButton;
+
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -33,7 +38,8 @@ public class NetWorkActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net_work);
-
+        mButton = (Button) findViewById(R.id.btn_to_activity);
+        mButton.setOnClickListener(mButtonClick);
         mResult = (TextView) findViewById(R.id.net_result);
         new Thread() {
             @Override
@@ -42,6 +48,14 @@ public class NetWorkActivity extends AppCompatActivity {
             }
         }.start();
     }
+
+    private View.OnClickListener mButtonClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent it = new Intent(NetWorkActivity.this, VolleyTestActivity.class);
+            startActivity(it);
+        }
+    };
 
     // 利用系统的HttpURLConnection请求
     private void request() {

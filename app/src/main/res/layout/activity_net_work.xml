@@ -7,7 +7,14 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.study.shenxing.caesar.network.NetWorkActivity">
 
+    <Button
+        android:id="@+id/btn_to_activity"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Go to see the second Activity"/>
+
     <ScrollView
+        android:layout_below="@id/btn_to_activity"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

@@ -48,6 +48,7 @@ public class WindowManagerService extends Service implements View.OnTouchListene
     @Override
     public void onCreate() {
         super.onCreate();
+        // 此处获取windowManager的context必须是application类型的,如果是activity类型的context,则无法覆盖到最顶层
         mWindowManager = (WindowManager) getApplication().getSystemService(Context.WINDOW_SERVICE) ;
         mLayoutParams = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.TYPE_SYSTEM_ALERT,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL, PixelFormat.TRANSLUCENT);

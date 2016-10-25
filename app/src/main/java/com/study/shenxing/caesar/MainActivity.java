@@ -148,6 +148,7 @@ public class MainActivity extends ListActivity {
         addItem("EventBus demo", "EventBusDemo");
         addItem("aidl test", "AidlTestActivity");
         addItem("test", "BatteryMainPageActivity");
+        addItem("permission test", "PermissionTestActivity");
 
     }
 

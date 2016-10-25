@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 读取电话状态 访问电话状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -373,6 +375,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".work.BatteryMainPageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".network.VolleyTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".permission.PermissionTestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

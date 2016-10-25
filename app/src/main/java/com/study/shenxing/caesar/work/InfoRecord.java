@@ -20,24 +20,24 @@ import java.util.Date;
  * Created by shenxing on 16/7/4.
  * 深度清理延长时间测试类, 测试完成后删掉
  */
-public class ExtendTimeTest {
+public class InfoRecord {
     private TestReceiver mTestReceiver = new TestReceiver();
-    private static final String PATH = Environment.getExternalStorageDirectory().getPath() + File.separator + "Extend_time";
+    private static final String PATH = Environment.getExternalStorageDirectory().getPath() + File.separator + "sh_test";
     private static final String FILE_NAME = PATH + File.separator + "info.txt";
     private static final String TEST_ACTION = "com.gau.go.launcherex.gowidget.gopowermaster.TEST_ACTION";
-    private static ExtendTimeTest sInstance;
+    private static InfoRecord sInstance;
     private Context mContext;
 
-    private ExtendTimeTest(Context context) {
+    private InfoRecord(Context context) {
         mContext = context;
         initReceiver(context);
 
 
     }
 
-    public static ExtendTimeTest getsInstance(Context context) {
+    public static InfoRecord getsInstance(Context context) {
         if (sInstance == null) {
-            sInstance = new ExtendTimeTest(context) ;
+            sInstance = new InfoRecord(context) ;
         }
         return sInstance;
     }
