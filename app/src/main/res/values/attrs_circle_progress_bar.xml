@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="CircleProgressBar2">
+        <attr name="ball_radius" format="dimension"/>
+        <attr name="progress_width" format="dimension"/>
+        <attr name="progress_bg_color" format="color"/>
+        <attr name="progress_color" format="color"/>
+    </declare-styleable>
+</resources>

@@ -1,11 +1,7 @@
 package com.study.shenxing.caesar.customview;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
@@ -19,17 +15,26 @@ public class CusFlowLayoutActivity extends AppCompatActivity {
 //    private PaintApiTestView mPaintApiTestView;
     private ColorMatrixView mColorMatrixView;
     private float mAngle;
+    private CircleProgressBar mCircleProgressBar;
+    private int count;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.custom_flow_layout);
         setContentView(R.layout.slide_view_pager_layout) ;
 
+        mCircleProgressBar = (CircleProgressBar) findViewById(R.id.test);
+
         mReset = (Button) findViewById(R.id.reset);
         mReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if (count % 2 == 0) {
+                    mCircleProgressBar.startForwardAnim();
+                } else {
+                    mCircleProgressBar.startBackwardAnim();
+                }
+                count++;
             }
         });
 

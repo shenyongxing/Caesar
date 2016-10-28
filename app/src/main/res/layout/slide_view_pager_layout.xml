@@ -151,7 +151,8 @@
 
     </LinearLayout>-->
 
-    <com.study.shenxing.caesar.customview.ScaleView
+    <com.study.shenxing.caesar.customview.CircleProgressBar
+        android:id="@+id/test"
         android:layout_below="@id/sb_seek_bar"
         android:layout_width="300dp"
         android:layout_height="300dp"/>
