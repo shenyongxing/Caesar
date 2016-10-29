@@ -149,6 +149,7 @@ public class MainActivity extends ListActivity {
         addItem("aidl test", "AidlTestActivity");
         addItem("test", "BatteryMainPageActivity");
         addItem("permission test", "PermissionTestActivity");
+        addItem("custom Drawable", "CustomDrawableActivity");
 
     }
 
