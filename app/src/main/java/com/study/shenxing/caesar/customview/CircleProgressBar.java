@@ -1,5 +1,7 @@
 package com.study.shenxing.caesar.customview;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -35,7 +37,8 @@ public class CircleProgressBar extends View {
     private int mY;
     private RectF mRectF;
     private int mStartAngle;
-    private int mEndAngle;
+    private int mSweepAngle;    // 扫过的角度
+    private boolean mHasFinished; // 进度是否完成
 
     public CircleProgressBar(Context context) {
         super(context);
@@ -94,10 +97,12 @@ public class CircleProgressBar extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        canvas.save();
         canvas.rotate(-90, mX, mY);
         drawBackground(canvas);
         drawProgress(canvas);
         drawBall(canvas);
+        canvas.restore();
     }
 
     private void drawBackground(Canvas canvas) {
@@ -105,18 +110,23 @@ public class CircleProgressBar extends View {
     }
 
     private void drawProgress(Canvas canvas) {
-        canvas.drawArc(mRectF, mStartAngle, mEndAngle, false, mProgressPaint);
+        // 注意在绘制弧形时注意第三个参数是扫过的角度，并不是弧形终边的角度值
+        // 通知跟进该方法可以查看到，0度的起始边对应顺时钟的3点方向
+        canvas.drawArc(mRectF, mStartAngle, mSweepAngle, false, mProgressPaint);
     }
 
     private void drawBall(Canvas canvas) {
-        double radians = mEndAngle * Math.PI / 180;
-        canvas.drawCircle((float) (mX + mRadius * Math.cos(radians)), (float) (mY + mRadius * Math.sin(radians)), mBallRadius, mBallPaint);
+        if (!mHasFinished) {
+            double radians = mSweepAngle * Math.PI / 180;
+            canvas.drawCircle((float) (mX + mRadius * Math.cos(radians)), (float) (mY + mRadius * Math.sin(radians)), mBallRadius, mBallPaint);
+        }
     }
 
     /**
      * 正向进度动画
      */
     public void startForwardAnim() {
+        mHasFinished = false;
         ValueAnimator va = ValueAnimator.ofFloat(0.0f, 1.0f);
         va.setDuration(800);
         va.setInterpolator(new AccelerateDecelerateInterpolator());
@@ -124,7 +134,36 @@ public class CircleProgressBar extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float fractionValue = (float) animation.getAnimatedValue();
-                mEndAngle = (int) (360 * fractionValue);
+                mSweepAngle = (int) (360 * fractionValue);
+                invalidate();
+            }
+        });
+        va.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                super.onAnimationEnd(animation);
+                mHasFinished = true;
+            }
+        });
+
+        if (va.isRunning()) {
+            va.end();
+        }
+        va.start();
+    }
+
+    /**
+     * 正向secondary进度动画
+     */
+    public void startSecondaryForwardAnim() {
+        ValueAnimator va = ValueAnimator.ofFloat(0.0f, 1.0f);
+        va.setDuration(800);
+        va.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float fractionValue = (float) animation.getAnimatedValue();
+                mStartAngle = (int) (360 * fractionValue);
+                mSweepAngle = 360 - mStartAngle;
                 invalidate();
             }
         });
@@ -139,7 +178,7 @@ public class CircleProgressBar extends View {
      * 反向进度动画
      */
     public void startBackwardAnim() {
-        final int currentAngle = mEndAngle;
+        final int currentAngle = mSweepAngle;
         ValueAnimator va = ValueAnimator.ofFloat(0.0f, 1.0f);
         va.setDuration(800);
         va.setInterpolator(new AccelerateInterpolator());
@@ -147,7 +186,7 @@ public class CircleProgressBar extends View {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 float fractionValue = (float) animation.getAnimatedValue();
-                mEndAngle = (int) (currentAngle - 360 * fractionValue);
+                mSweepAngle = (int) (currentAngle - 360 * fractionValue);
                 invalidate();
             }
         });

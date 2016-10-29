@@ -32,7 +32,7 @@ public class CusFlowLayoutActivity extends AppCompatActivity {
                 if (count % 2 == 0) {
                     mCircleProgressBar.startForwardAnim();
                 } else {
-                    mCircleProgressBar.startBackwardAnim();
+                    mCircleProgressBar.startSecondaryForwardAnim();
                 }
                 count++;
             }

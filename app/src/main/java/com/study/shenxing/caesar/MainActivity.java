@@ -141,7 +141,7 @@ public class MainActivity extends ListActivity {
         addItem("xml解析", "XmlParserActivity");
         addItem("gridview消失动画", "GridAnimActivity");
         addItem("View Measure实践", "MeasureTestActivity");
-        addItem("RecycleView实践", "RecyclerViewActivity");
+        addItem("RecycleView实践", "RecyclerViewActivity2");
         addItem("MeterialDesign", "MeterialDesignDemo");
         addItem("Transition", "SceneTransitionsActivity");
         addItem("Scale 锚点问题", "ScalePivotActivity");
