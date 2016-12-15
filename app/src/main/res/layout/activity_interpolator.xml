@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_interpolator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.study.shenxing.caesar.interpolator.InterpolatorActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="弹性:"/>
+
+        <TextView
+            android:id="@+id/tv_period"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.25"/>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sb_period"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="25"
+        android:max="100"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="过冲比:"/>
+
+        <TextView
+            android:id="@+id/tv_overshot"
+            android:layout_marginLeft="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="0.25"/>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sb_overshot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="25"
+        android:max="100"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间:"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2500"/>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sb_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="2500"
+        android:max="10000"/>
+
+    <ImageView
+        android:id="@+id/iv_obstacle"
+        android:layout_marginTop="20dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@android:color/holo_red_light"/>
+
+</LinearLayout>

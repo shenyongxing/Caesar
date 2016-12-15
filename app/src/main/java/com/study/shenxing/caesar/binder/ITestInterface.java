@@ -33,11 +33,11 @@ public interface ITestInterface extends IInterface {
         }
 
         public static ITestInterface asInterface(android.os.IBinder obj) {
-            if ((obj==null)) {
+            if (obj == null) {
                 return null;
             }
             android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
-            if (((iin!=null) && (iin instanceof ITestInterface))) {
+            if (((iin != null) && (iin instanceof ITestInterface))) {
                 Log.i(TAG, "**************asInterface: inner process");
                 return ((ITestInterface)iin);
             }

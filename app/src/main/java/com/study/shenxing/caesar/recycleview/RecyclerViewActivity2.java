@@ -1,10 +1,13 @@
 package com.study.shenxing.caesar.recycleview;
 
+import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 import com.study.shenxing.caesar.R;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecyclerViewActivity2 extends AppCompatActivity {
+    public static final String TAG = "sh";
     private RecyclerView mRecyclerView;
 //    private DataAdapter mDataAdapter;
     private NewVersionDataAdapter mDataAdapter;
@@ -53,8 +57,23 @@ public class RecyclerViewActivity2 extends AppCompatActivity {
                         outRect.right = 10;
                     }
                 }
+                Log.i(TAG, "getItemOffsets: ");
+                // 此处的rect指定在childView之外增加的部分，默认rect为（0，0， 0，0）
+            }
+
+            @Override
+            public void onDraw(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                super.onDraw(c, parent, state);
+                Log.i(TAG, "onDraw: " + parent.getChildCount());
+            }
+
+            @Override
+            public void onDrawOver(Canvas c, RecyclerView parent, RecyclerView.State state) {
+                super.onDrawOver(c, parent, state);
+                Log.i(TAG, "onDrawOver: " + parent.getChildCount());
             }
         });
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
         initData();
     }

@@ -1,7 +1,10 @@
 package com.study.shenxing.caesar;
 
 import android.app.ListActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -112,45 +115,48 @@ public class MainActivity extends ListActivity {
      * 注意：activity名称不能重复
      */
     private void addItems() {
-        addItem("Activity LifeCycle", "ActivityA") ;
-        addItem("Fragment", "FragmentDemoActivity");
-        addItem("Share Data", "ShareDataActivity");
-        addItem("Matrix", "MatrixDemo");
-        addItem("Round Image", "RoundImageActivity");
-        addItem("Sticky ListView", "StickyListViewActivity");
-        addItem("Theme Wallpaper", "ThemeWallpaperActivity");
-        addItem("Custom Animation", "CusAnimationActivity");
-        addItem("Temp Demo", "TempActivity");
-        addItem("Custom View", "CusFlowLayoutActivity");
-        addItem("Wave View", "WaveViewActivity");
-        addItem("Sava data", "SaveDataActivity") ;
-        addItem("50 Hacks", "Hacks50Activity");
-        addItem("SharePreference", "SharePreferencesActivity");
-        addItem("双曲螺线动画", "HyperbolicAnimationActivity");
-        addItem("知识点测试", "TestActivity2");
-        addItem("ViewFlipper", "ViewFlipperActivity");
-        addItem("悬浮窗demo", "WindowManagerActivity");
-        addItem("Shader", "ShaderActivity");
-        addItem("Work demo", "ListDemoActivity");
-        addItem("DataBase", "DatabaseDemoActivity");
-        addItem("Intent的常用用法", "IntentCommonUseActivity");
-        addItem("ListView用法", "ListViewActivity");
-        addItem("ScrollView与ListView滑动冲突", "ScrollAndListViewActivity");
-        addItem("网络请求", "NetWorkActivity");
-        addItem("常用排序", "AlgorithmDemoActivity");
-        addItem("xml解析", "XmlParserActivity");
-        addItem("gridview消失动画", "GridAnimActivity");
-        addItem("View Measure实践", "MeasureTestActivity");
-        addItem("RecycleView实践", "RecyclerViewActivity2");
-        addItem("MeterialDesign", "MeterialDesignDemo");
-        addItem("Transition", "SceneTransitionsActivity");
-        addItem("Scale 锚点问题", "ScalePivotActivity");
-        addItem("EventBus demo", "EventBusDemo");
-        addItem("aidl test", "AidlTestActivity");
-        addItem("test", "BatteryMainPageActivity");
-        addItem("permission test", "PermissionTestActivity");
-        addItem("custom Drawable", "CustomDrawableActivity");
-
+//        addItem("Activity LifeCycle", "ActivityA") ;
+//        addItem("Fragment", "FragmentDemoActivity");
+//        addItem("Share Data", "ShareDataActivity");
+//        addItem("Matrix", "MatrixDemo");
+//        addItem("Round Image", "RoundImageActivity");
+//        addItem("Sticky ListView", "StickyListViewActivity");
+//        addItem("Theme Wallpaper", "ThemeWallpaperActivity");
+//        addItem("Custom Animation", "CusAnimationActivity");
+//        addItem("Temp Demo", "TempActivity");
+//        addItem("Custom View", "CusFlowLayoutActivity");
+//        addItem("Wave View", "WaveViewActivity");
+//        addItem("Sava data", "SaveDataActivity") ;
+//        addItem("50 Hacks", "Hacks50Activity");
+//        addItem("SharePreference", "SharePreferencesActivity");
+//        addItem("双曲螺线动画", "HyperbolicAnimationActivity");
+//        addItem("知识点测试", "TestActivity2");
+//        addItem("ViewFlipper", "ViewFlipperActivity");
+//        addItem("悬浮窗demo", "WindowManagerActivity");
+//        addItem("Shader", "ShaderActivity");
+//        addItem("Work demo", "ListDemoActivity");
+//        addItem("DataBase", "DatabaseDemoActivity");
+//        addItem("Intent的常用用法", "IntentCommonUseActivity");
+//        addItem("ListView用法", "ListViewActivity");
+//        addItem("ScrollView与ListView滑动冲突", "ScrollAndListViewActivity");
+//        addItem("网络请求", "NetWorkActivity");
+//        addItem("常用排序", "AlgorithmDemoActivity");
+//        addItem("xml解析", "XmlParserActivity");
+//        addItem("gridview消失动画", "GridAnimActivity");
+//        addItem("View Measure实践", "MeasureTestActivity");
+//        addItem("RecycleView实践", "RecyclerViewActivity2");
+//        addItem("MeterialDesign", "MeterialDesignDemo");
+//        addItem("Transition", "SceneTransitionsActivity");
+//        addItem("Scale 锚点问题", "ScalePivotActivity");
+//        addItem("EventBus demo", "EventBusDemo");
+//        addItem("aidl test", "AidlTestActivity");
+//        addItem("test", "BatteryMainPageActivity");
+//        addItem("permission test", "PermissionTestActivity");
+//        addItem("custom Drawable", "CustomDrawableActivity");
+//        addItem("mvp demo", "TaskActivity");
+//        addItem("status Height", "StatusHeightActivity");
+//        addItem("system ui visibility", "SystemUiActivity");
+        addItem("interpolator", "InterpolatorActivity");
     }
 
     private boolean isValidate(String name) {
@@ -223,5 +229,52 @@ public class MainActivity extends ListActivity {
         IBinder binder = reply.readStrongBinder();
         reply.recycle();
         data.recycle();
+    }
+
+
+    private static final BroadcastReceiver BROADCAST_RECEIVER = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+        }
+    };
+
+    private static void unregisterBroadcastSafely(Context context) {
+        try {
+            context.unregisterReceiver(BROADCAST_RECEIVER);
+        } catch (Exception e) {
+
+        }
+    }
+
+    /**
+     * 获取手机电量
+     * 经过验证可以正确获取
+     * @param context
+     * @return
+     */
+    public static int getLevelPercent(Context context) {
+        Intent intent = null;
+        try {
+            intent = context.registerReceiver(BROADCAST_RECEIVER, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
+        } catch (Exception e) {
+        }
+
+        if (intent == null) {
+            return 0;
+        }
+
+        int level = intent.getIntExtra("level", 0);
+        if (level == 0) {
+            return 0;
+        }
+
+        int scale = intent.getIntExtra("scale", 0);
+        if (scale == 0) {
+            return 0;
+        }
+
+        unregisterBroadcastSafely(context);
+        return level * 100 / scale;
     }
 }

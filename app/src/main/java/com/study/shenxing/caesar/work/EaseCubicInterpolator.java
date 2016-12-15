@@ -21,6 +21,10 @@ public class EaseCubicInterpolator implements Interpolator {
     private final PointF mControlPoint2 = new PointF();
 
 
+    public EaseCubicInterpolator() {
+
+        this(0, 1.0f, 0f, 1.0f);
+    }
 
     /**
 

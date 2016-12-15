@@ -12,10 +12,17 @@
     tools:context="com.study.shenxing.caesar.customdrawable.CustomDrawableActivity">
 
 
-    <ImageView
+    <!--<ImageView
         android:id="@+id/iv_test_cusdrawable"
         android:layout_centerInParent="true"
         android:layout_width="300dp"
-        android:layout_height="300dp"/>
+        android:layout_height="300dp"/>-->
+
+    <TextView
+        android:id="@+id/tv_test_handler"
+        android:textSize="18sp"
+        android:text="Changing after 3 seconds"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
 </RelativeLayout>
