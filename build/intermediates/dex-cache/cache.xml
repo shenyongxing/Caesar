@@ -2,39 +2,211 @@
 <items version="2" >
 
     <item
-        jar="/Users/shenxing/Workspace/Caesar/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
-        <dex dex="/Users/shenxing/Workspace/Caesar/app/build/intermediates/pre-dexed/debug/classes-98cea7259fad79fdb79b12fdeeda7e9c34a797c3.jar" />
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.4.0_92b41f78d4b23cc932d510d3b2a42ad2afadf37d.jar" />
     </item>
     <item
-        jar="/Users/shenxing/Workspace/Caesar/app/build/intermediates/exploded-aar/com.android.support/design/23.0.1/jars/classes.jar"
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="e5c61a3169221a89654ffcaaed47bba51cf071ad">
-        <dex dex="/Users/shenxing/Workspace/Caesar/app/build/intermediates/pre-dexed/debug/classes-ff28fed97d744932a0c42ab0b8aaffc7647b2440.jar" />
+        optimize="true"
+        revision="23.0.3"
+        sha1="7e11799d8a26bfa5d48acafe012ee5545b9bf468">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-rules-0.5_9655491f44713938eb2672c99ec6a1c49b652014.jar" />
     </item>
     <item
-        jar="/Users/shenxing/Workspace/Caesar/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.4.0/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
-        <dex dex="/Users/shenxing/Workspace/Caesar/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-3165d11445b21896a651caa93c787a6b0aa8fefe.jar" />
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-23.4.0_a2e080e213144afa1add2d7224faa9055878e3cc.jar" />
     </item>
     <item
-        jar="/Users/shenxing/Workspace/Caesar/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
-        <dex dex="/Users/shenxing/Workspace/Caesar/app/build/intermediates/pre-dexed/debug/classes-5cfad647a04e8167a03f45dda367e0fa94827b79.jar" />
+        optimize="true"
+        revision="23.0.3"
+        sha1="796f9229948e907471c5595fbe94655ccf03ff73">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-runner-0.5_102ed7274369bb535710067189cd15fee6c0cb02.jar" />
     </item>
     <item
-        jar="/Users/shenxing/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/design/23.4.0/jars/classes.jar"
         jumboMode="false"
-        revision="23.0.1"
-        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
-        <dex dex="/Users/shenxing/Workspace/Caesar/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-f73ccbc8fef136f4685049685581693216f6976a.jar" />
+        optimize="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.4.0_48292d87254b09a00d684f2fc13efbb1f7caab84.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/javax.inject-1_ccfaecb1412405f2f11b502f4e473bf229889df9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4785a3c21320980282f9f33d0d1264a69040538f">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-library-1.3_8c636116b8c5fc0d0d2b8689098fdf893e59a0fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.4.0_112df79953f3a54fba313e46e626b2a18e060342.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-core/2.2.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d115b0e9e1501135fe91254ba884fcbd83d374c0">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-core-2.2.2_63de72af401b063a8b2f4570c1f49d8db87504ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/com.squareup/javawriter/2.1.1/67ff45d9ae02e583d0f9b3432a5ebbe05c30c966/javawriter-2.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="67ff45d9ae02e583d0f9b3432a5ebbe05c30c966">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/javawriter-2.1.1_990d7e01ca1b6040f7d56fe618072d7e8a7e0eec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-core-1.3_d5c9da032db79240595f8ef9e826efc0c65fd897.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/org.greenrobot/eventbus/3.0.0/ddd99896e9569eaababbe81b35d80e1b91c4ad85/eventbus-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/eventbus-3.0.0_9ba4beb836e8b99252031f27b316b84ec290342e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support.test/exposed-instrumentation-api-publish/0.5/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="905f3e63973d47fedf2d945fa31d8c0f0c98816e">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test-exposed-instrumentation-api-publish-0.5_47767e92fc3ed69bb55a914192783339584ab641.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/javax.annotation/javax.annotation-api/1.2/479c1e06db31c432330183f5cae684163f186146/javax.annotation-api-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="479c1e06db31c432330183f5cae684163f186146">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/javax.annotation-api-1.2_771c01622e6a6ce233c43ea758ef01b17b5eaa96.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support.test.uiautomator/uiautomator-v18/2.1.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d9ebd18603c0013727799e7ed41bcb42f3df75c0">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.uiautomator-uiautomator-v18-2.1.2_15a540111138664cfcce7aa2c97b59d2781d41d0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.4.0_c491baf80a8af917574065f2d7900a13f40e774a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.4.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-23.4.0_58161d2c5f0335ad72758ed72bef3ede6737039a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.4.0/jars/libs/internal_impl-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/internal_impl-23.4.0_dc7c40f5738a2eec85e18a29dbb399beb5e761c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/2.0.1/516c03b21d50a644d538de0f0369c620989cd8f0/jsr305-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="516c03b21d50a644d538de0f0369c620989cd8f0">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/jsr305-2.0.1_d7f861658de21ddaad09f6aee0deafc659e0e517.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-integration/1.3/5de0c73fef18917cd85d0ab70bb23818685e4dfd/hamcrest-integration-1.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5de0c73fef18917cd85d0ab70bb23818685e4dfd">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/hamcrest-integration-1.3_4c75722ced044b65a03cc8879a9a68674cd38893.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/junit-4.12_a7d15465a691b78f148324c5ebbc58ca7d8fbf6e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.4.0/support-annotations-23.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/debug/support-annotations-23.4.0_7ce2a77aea35a04a6e61ccbf3fdb0f62fe74f355.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/exploded-aar/com.android.support.test.espresso/espresso-idling-resource/2.2.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a890ee8445927649d9ed50f625a315d8758688be">
+        <dex dex="/Users/shenxing/Workspace/CaesarRepository/app/build/intermediates/pre-dexed/androidTest/debug/com.android.support.test.espresso-espresso-idling-resource-2.2.2_67c8237e68ae649f85b1f852a4db37701f61c450.jar" />
     </item>
 
 </items>
