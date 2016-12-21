@@ -156,7 +156,8 @@ public class MainActivity extends ListActivity {
 //        addItem("mvp demo", "TaskActivity");
 //        addItem("status Height", "StatusHeightActivity");
 //        addItem("system ui visibility", "SystemUiActivity");
-        addItem("interpolator", "InterpolatorActivity");
+//        addItem("interpolator", "InterpolatorActivity");
+        addItem("流量统计demo", "TrafficStatActivity");
     }
 
     private boolean isValidate(String name) {

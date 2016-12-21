@@ -11,11 +11,6 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.util.Log;
 
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -307,35 +302,5 @@ public class AppUtils {
             mE.printStackTrace();
         }
         return drawable;
-    }
-
-    /**
-     * 获取Google Advertising Id
-     * 注:该方法需要在异步线程中调用,因为AdvertisingIdClient.getAdvertisingIdInfo(mContext)不能在UI线程中执行.
-     *
-     * @return the device specific Advertising ID provided by the Google Play Services, <em>null</em> if an error occurred.
-     */
-    public static String getGoogleAdvertisingId(Context context) {
-        //获取GADID
-        AdvertisingIdClient.Info adInfo = null;
-        try {
-            adInfo = AdvertisingIdClient.getAdvertisingIdInfo(context);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (GooglePlayServicesNotAvailableException e) {
-            e.printStackTrace();
-        } catch (IllegalStateException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (GooglePlayServicesRepairableException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-        if (adInfo != null) {
-            return adInfo.getId();
-        } else {
-            return "UNABLE-TO-RETRIEVE";
-        }
     }
 }
