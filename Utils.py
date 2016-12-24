@@ -1,5 +1,6 @@
+# -*- coding: utf-8 -*-
 #! /usr/bin/python
-# 工具类
+# util class
 
 import os
 import time 
