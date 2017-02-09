@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_desk_icon_launcher"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.study.shenxing.caesar.desktopanimation.DesktopIconLauncherActivity">
+
+
+    <ImageView
+        android:id="@+id/iv_icon_shadow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@android:color/holo_red_light"/>
+
+</RelativeLayout>

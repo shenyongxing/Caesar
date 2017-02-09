@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
 
     <application
         android:allowBackup="true"
@@ -23,7 +24,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -460,6 +462,50 @@
             </intent-filter>
         </activity>
         <activity android:name=".trafficstat.TrafficStatActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".desktopanimation.DesktopIconAnimationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".desktopanimation.DesktopIconLauncherActivity"
+            android:theme="@style/desk_top_icon_transparent">
+
+            <!-- 如果没有这个filter，那么指向该activity的快捷方式无法跳转 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".progressbar.ProgressBarActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".notification.NotificationManageActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".hellojni.JniTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".vectoranimation.VectorAniamtionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

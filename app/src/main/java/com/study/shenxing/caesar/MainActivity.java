@@ -20,7 +20,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.study.shenxing.caesar.binder.AidlService;
+import com.study.shenxing.caesar.desktopanimation.DesktopIconAnimationActivity;
+import com.study.shenxing.caesar.hellojni.JniTestActivity;
+import com.study.shenxing.caesar.progressbar.ProgressBarActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
+import com.study.shenxing.caesar.vectoranimation.VectorAniamtionActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -37,6 +41,7 @@ public class MainActivity extends ListActivity {
     private List<String> mTitle = new ArrayList<String>() ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WALLPAPER);
         setContentView(R.layout.activity_main);
@@ -57,6 +62,8 @@ public class MainActivity extends ListActivity {
 //        } catch (RemoteException e) {
 //            e.printStackTrace();
 //        }
+
+
     }
 
     private void addItem(String title, String activityName) {
@@ -157,7 +164,11 @@ public class MainActivity extends ListActivity {
 //        addItem("status Height", "StatusHeightActivity");
 //        addItem("system ui visibility", "SystemUiActivity");
 //        addItem("interpolator", "InterpolatorActivity");
-        addItem("流量统计demo", "TrafficStatActivity");
+//        addItem("流量统计demo", "TrafficStatActivity");
+//        addItem("DeskTop icon animtion", "DesktopIconAnimationActivity");
+//        addItem("custom progressbar", "ProgressBarActivity");
+//        addItem("jni test", "JniTestActivity");
+        addItem("Vector Animation", "VectorAniamtionActivity");
     }
 
     private boolean isValidate(String name) {
