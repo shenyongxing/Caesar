@@ -20,11 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.study.shenxing.caesar.binder.AidlService;
-import com.study.shenxing.caesar.desktopanimation.DesktopIconAnimationActivity;
-import com.study.shenxing.caesar.hellojni.JniTestActivity;
-import com.study.shenxing.caesar.progressbar.ProgressBarActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
-import com.study.shenxing.caesar.vectoranimation.VectorAniamtionActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -122,7 +118,7 @@ public class MainActivity extends ListActivity {
      * 注意：activity名称不能重复
      */
     private void addItems() {
-//        addItem("Activity LifeCycle", "ActivityA") ;
+        addItem("Activity LifeCycle", "ActivityA") ;
 //        addItem("Fragment", "FragmentDemoActivity");
 //        addItem("Share Data", "ShareDataActivity");
 //        addItem("Matrix", "MatrixDemo");
@@ -168,7 +164,8 @@ public class MainActivity extends ListActivity {
 //        addItem("DeskTop icon animtion", "DesktopIconAnimationActivity");
 //        addItem("custom progressbar", "ProgressBarActivity");
 //        addItem("jni test", "JniTestActivity");
-        addItem("Vector Animation", "VectorAniamtionActivity");
+//        addItem("Vector Animation", "VectorAniamtionActivity");
+        addItem("ThreadPoolExcutor test", "ThreadPoolExecutorActivity");
     }
 
     private boolean isValidate(String name) {

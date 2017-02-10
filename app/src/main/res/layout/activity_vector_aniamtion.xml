@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,6 +10,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.study.shenxing.caesar.vectoranimation.VectorAniamtionActivity">
 
 
@@ -21,5 +22,19 @@
         android:scaleType="fitXY"
         android:onClick="anim"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button 波纹有界"
+        android:colorControlHighlight="@android:color/holo_green_light"
+        android:background="?android:attr/selectableItemBackground"/>
 
-</RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button 波纹无界"
+        android:colorControlHighlight="@android:color/holo_red_light"
+        android:background="?android:attr/selectableItemBackgroundBorderless"/>
+
+
+</LinearLayout>

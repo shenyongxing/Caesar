@@ -19,6 +19,7 @@ package com.study.shenxing.caesar.activitylifecycle;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -105,4 +106,19 @@ public class ActivityA extends Activity {
         ActivityA.this.finish();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.i("sh", "onSaveInstanceState: ");
+
+        // 1.按home键 2. 调用后台程序栈键选择其他程序时 3. 灭屏时 4.跳转到其他activity时 5.屏幕方向切换 以及其他可能的情况
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        Log.i("sh", "onRestoreInstanceState: ");
+
+        // 如果该acitivity没有被销毁则该方法不会被回调
+    }
 }
