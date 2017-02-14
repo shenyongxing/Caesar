@@ -2,9 +2,11 @@ package com.study.shenxing.caesar;
 
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -20,6 +22,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.study.shenxing.caesar.binder.AidlService;
+import com.study.shenxing.caesar.binder.AidlService1;
+import com.study.shenxing.caesar.binder.ITestInterface;
+import com.study.shenxing.caesar.dynamictest.DynamicLoadActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -52,14 +57,12 @@ public class MainActivity extends ListActivity {
         useDexClassLoader();
         // start service
 //        startAidlTestService();
-//        AidlService service = new AidlService();
-//        try {
-//            invokeRemoteMethod();
-//        } catch (RemoteException e) {
-//            e.printStackTrace();
-//        }
-
-
+        AidlService1 service = new AidlService1();
+        try {
+            invokeRemoteMethod(service);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
     private void addItem(String title, String activityName) {
@@ -166,6 +169,7 @@ public class MainActivity extends ListActivity {
 //        addItem("jni test", "JniTestActivity");
 //        addItem("Vector Animation", "VectorAniamtionActivity");
         addItem("ThreadPoolExcutor test", "ThreadPoolExecutorActivity");
+        addItem("Dynamic load test", "DynamicLoadActivity");
     }
 
     private boolean isValidate(String name) {
@@ -223,16 +227,47 @@ public class MainActivity extends ListActivity {
     // start service
     public void startAidlTestService() {
         Intent it = new Intent(this, AidlService.class);
-        startService(it);
+//        startService(it);
+        bindService(it, conn, Context.BIND_AUTO_CREATE);
     }
 
-    private void invokeRemoteMethod() throws RemoteException {
-        IBinder mRemote = null; // Binder驱动中的binder对象
+    private IBinder mRemote;
+    private ServiceConnection conn = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            Log.i("sh", "onServiceConnected: " + service);
+            mRemote = service;
+            try {
+                invokeRemoteMethod(mRemote);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+
+            ITestInterface test = ITestInterface.Stub.asInterface(service);
+            try {
+                test.getName();
+                test.setName("hejisdfjisdfi");
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName name) {
+
+        }
+    };
+
+    /**
+     * @param mRemote Binder驱动中的binder对象
+     * @throws RemoteException
+     */
+    private void invokeRemoteMethod(IBinder mRemote) throws RemoteException {
         String filePath = "/sdcard/love.mp3";
         int code = 1000;
         Parcel data = Parcel.obtain();
         Parcel reply = Parcel.obtain();
-        data.writeInterfaceToken("AidlService");
+        data.writeInterfaceToken("AidlService1");
         data.writeString(filePath);
         mRemote.transact(code, data, reply, 0);     // Binder驱动挂起当前线程,并向服务端发送消息, 0表示双向IPC模式
         IBinder binder = reply.readStrongBinder();
