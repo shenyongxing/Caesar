@@ -526,6 +526,27 @@
                 <category android:name="android.intent.category.STUDY_DEMO"/>
             </intent-filter>
         </activity>
+        <activity android:name=".recursivedraw.RecursiveDrawActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".asynchttp.AsyncHttpActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".imageloader.ImageLoaderTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

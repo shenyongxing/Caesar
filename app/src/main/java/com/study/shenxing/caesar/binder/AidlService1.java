@@ -14,6 +14,7 @@ import android.util.Log;
  * Created by shenxing on 16/8/22.
  *
  * 实践手动调用binder, but it's not works
+ *
  */
 public class AidlService1 extends Binder {
     public static final String TAG = "sh";

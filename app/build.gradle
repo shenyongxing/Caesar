@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.hugo'
 
 android {
     compileSdkVersion 23
@@ -17,6 +18,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "JOKE_URL", "\"http://www.baidu.com\""
+            buildConfigField "boolean", "LOG_SWITCH", "false"
+        }
+        debug {
+            buildConfigField "String", "JOKE_URL", "\"http://www.google.com\""
+            buildConfigField "boolean", "LOG_SWITCH", "true"
         }
     }
 
@@ -49,23 +56,26 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     // Required -- JUnit 4 framework
     // Optional -- Mockito framework
-    
 
     // Set this dependency to use JUnit 4 rules
     // Set this dependency to build and run Espresso tests
     // Set this dependency to build and run UI Automator tests
     // another dependencies of espresso
+
+
+    // vectorDrawable必须
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.android.support:recyclerview-v7:23.4.0'
     compile 'com.android.support:support-v4:23.4.0'
     compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'com.jakewharton.scalpel:scalpel:1.1.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha7'
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.10.19'
     androidTestCompile 'com.android.support:support-annotations:23.4.0'
     androidTestCompile 'com.android.support.test:runner:0.5'
     androidTestCompile 'com.android.support.test:rules:0.5'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
-
-    compile 'com.android.support:appcompat-v7:23.2.0'   // vectorDrawable必须
 }

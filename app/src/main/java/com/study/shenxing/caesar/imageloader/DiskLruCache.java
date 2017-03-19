@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.study.shenxing.caesar.displaybitmap;
+package com.study.shenxing.caesar.imageloader;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;

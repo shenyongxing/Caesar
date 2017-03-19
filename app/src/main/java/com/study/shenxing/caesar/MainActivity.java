@@ -21,10 +21,10 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.jakewharton.scalpel.ScalpelFrameLayout;
 import com.study.shenxing.caesar.binder.AidlService;
 import com.study.shenxing.caesar.binder.AidlService1;
 import com.study.shenxing.caesar.binder.ITestInterface;
-import com.study.shenxing.caesar.dynamictest.DynamicLoadActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -35,17 +35,25 @@ import java.util.List;
 import java.util.Map;
 
 import dalvik.system.PathClassLoader;
+import hugo.weaving.DebugLog;
 
+@DebugLog
 public class MainActivity extends ListActivity {
+    public static final String TAG = "sh";
     public static final String STUDY_DEMO = "android.intent.category.STUDY_DEMO";
     private Map<String, String> mItems = new HashMap<String, String>() ;
     private List<String> mTitle = new ArrayList<String>() ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WALLPAPER);
         setContentView(R.layout.activity_main);
+
+
+        ScalpelFrameLayout frameLayout = (ScalpelFrameLayout) findViewById(R.id.threeD_layout);
+        frameLayout.setLayerInteractionEnabled(false);
 
         addItems() ;
         ArrayAdapter<String> activityList = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mTitle) ;
@@ -63,6 +71,12 @@ public class MainActivity extends ListActivity {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+
+//        testGetMethods();
+
+        Log.i(TAG, "onCreate: JOKE_URL " + BuildConfig.JOKE_URL);
+        Log.i(TAG, "onCreate: LOG_SWITCH " + BuildConfig.LOG_SWITCH);
+
     }
 
     private void addItem(String title, String activityName) {
@@ -94,7 +108,7 @@ public class MainActivity extends ListActivity {
         }
     }
 
-    private String getFullActivityName(String activityName) {
+    public String getFullActivityName(String activityName) {
         Intent it = new Intent(Intent.ACTION_MAIN) ;
         it.addCategory(STUDY_DEMO) ;
         PackageManager packageManager = getPackageManager() ;
@@ -121,7 +135,7 @@ public class MainActivity extends ListActivity {
      * 注意：activity名称不能重复
      */
     private void addItems() {
-        addItem("Activity LifeCycle", "ActivityA") ;
+//        addItem("Activity LifeCycle", "ActivityA") ;
 //        addItem("Fragment", "FragmentDemoActivity");
 //        addItem("Share Data", "ShareDataActivity");
 //        addItem("Matrix", "MatrixDemo");
@@ -168,8 +182,11 @@ public class MainActivity extends ListActivity {
 //        addItem("custom progressbar", "ProgressBarActivity");
 //        addItem("jni test", "JniTestActivity");
 //        addItem("Vector Animation", "VectorAniamtionActivity");
-        addItem("ThreadPoolExcutor test", "ThreadPoolExecutorActivity");
+//        addItem("ThreadPoolExcutor test", "ThreadPoolExecutorActivity");
         addItem("Dynamic load test", "DynamicLoadActivity");
+        addItem("Recursive Draw", "RecursiveDrawActivity");
+        addItem("android-async-http", "AsyncHttpActivity");
+        addItem("ImageLoader Test", "ImageLoaderTestActivity");
     }
 
     private boolean isValidate(String name) {
@@ -320,5 +337,21 @@ public class MainActivity extends ListActivity {
 
         unregisterBroadcastSafely(context);
         return level * 100 / scale;
+    }
+
+    /**
+     * getDeclareMethods与getMethods的区别
+     */
+    public void testGetMethods() {
+        Method[] methods = this.getClass().getDeclaredMethods();
+        Log.i(TAG, "methods  ");
+        for (Method method : methods) {
+            Log.i(TAG, "method : " + method.getName());
+        }
+        Log.i(TAG, "================================");
+        Method[] methods2 = this.getClass().getMethods();
+        for (Method method : methods2) {
+            Log.i(TAG, "method : " + method.getName());
+        }
     }
 }
