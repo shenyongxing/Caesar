@@ -189,4 +189,9 @@ public class ThreadPoolExecutorActivity extends AppCompatActivity {
             });
         }
     }
+
+    private void testApi() {
+        ExecutorService priortyThreadPool = new CusThreadPoolExecutor(3, 3, 0, TimeUnit.SECONDS, new PriorityBlockingQueue<Runnable>());
+//        priortyThreadPool.submit();
+    }
 }

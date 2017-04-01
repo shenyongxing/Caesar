@@ -25,6 +25,7 @@ import com.jakewharton.scalpel.ScalpelFrameLayout;
 import com.study.shenxing.caesar.binder.AidlService;
 import com.study.shenxing.caesar.binder.AidlService1;
 import com.study.shenxing.caesar.binder.ITestInterface;
+import com.study.shenxing.caesar.textinputlayout.TextInputLayoutActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 
 import java.lang.reflect.InvocationTargetException;
@@ -187,6 +188,7 @@ public class MainActivity extends ListActivity {
         addItem("Recursive Draw", "RecursiveDrawActivity");
         addItem("android-async-http", "AsyncHttpActivity");
         addItem("ImageLoader Test", "ImageLoaderTestActivity");
+        addItem("TextInputLayout", "TextInputLayoutActivity");
     }
 
     private boolean isValidate(String name) {
