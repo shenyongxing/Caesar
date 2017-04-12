@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:andorid="http://schemas.android.com/apk/res/android"
+    andorid:layout_width="match_parent"
+    andorid:layout_height="match_parent"
+    andorid:orientation="vertical">
+
+    <ImageView
+        andorid:layout_width="match_parent"
+        andorid:background="@color/dark_red"
+        andorid:layout_height="20dp"/>
+
+
+</LinearLayout>
