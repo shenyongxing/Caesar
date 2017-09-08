@@ -83,9 +83,9 @@
 </com.study.shenxing.caesar.customview.SlideViewPager>-->
 <com.study.shenxing.caesar.customview.RoundRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <!--<com.study.shenxing.caesar.customview.ViewLifeCycle
         android:layout_width="100dp"
@@ -100,9 +100,9 @@
 
     <SeekBar
         android:id="@+id/sb_seek_bar"
-        android:layout_below="@id/reset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/reset"
         android:max="100"/>
 
 
@@ -153,11 +153,95 @@
 
     <com.study.shenxing.caesar.customview.CircleProgressBar
         android:id="@+id/test"
-        android:layout_below="@id/sb_seek_bar"
         android:layout_width="300dp"
-        android:layout_height="300dp"/>
+        android:layout_height="300dp"
+        android:layout_below="@id/sb_seek_bar"/>
 
 
+    <!--<com.study.shenxing.caesar.customview.FixedRatioView-->
+        <!--android:background="@color/dark_blue"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"/>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/test">
 
+        <com.study.shenxing.caesar.customview.LabelViewGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_green">
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="World"
+                android:background="@color/dark_red"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="Hello"
+                android:background="@color/dark_blue"/>
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:text="World"
+                android:background="@color/dark_red"/>
+
+        </com.study.shenxing.caesar.customview.LabelViewGroup>
+
+
+    </LinearLayout>
 
 </com.study.shenxing.caesar.customview.RoundRelativeLayout>

@@ -22,11 +22,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jakewharton.scalpel.ScalpelFrameLayout;
+import com.study.shenxing.caesar.animationeasingfunctions.AnimationEasingFuncActivity;
 import com.study.shenxing.caesar.binder.AidlService;
 import com.study.shenxing.caesar.binder.AidlService1;
 import com.study.shenxing.caesar.binder.ITestInterface;
+import com.study.shenxing.caesar.recycleview.RecyclerViewActivity;
+import com.study.shenxing.caesar.spannable.SpannableActivity;
+import com.study.shenxing.caesar.swiperefresh.SwipeRefreshActivity;
 import com.study.shenxing.caesar.textinputlayout.TextInputLayoutActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
+import com.study.shenxing.caesar.webview.WebViewActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -184,11 +189,17 @@ public class MainActivity extends ListActivity {
 //        addItem("jni test", "JniTestActivity");
 //        addItem("Vector Animation", "VectorAniamtionActivity");
 //        addItem("ThreadPoolExcutor test", "ThreadPoolExecutorActivity");
-        addItem("Dynamic load test", "DynamicLoadActivity");
-        addItem("Recursive Draw", "RecursiveDrawActivity");
-        addItem("android-async-http", "AsyncHttpActivity");
-        addItem("ImageLoader Test", "ImageLoaderTestActivity");
-        addItem("TextInputLayout", "TextInputLayoutActivity");
+//        addItem("Dynamic load test", "DynamicLoadActivity");
+//        addItem("Recursive Draw", "RecursiveDrawActivity");
+//        addItem("android-async-http", "AsyncHttpActivity");
+//        addItem("ImageLoader Test", "ImageLoaderTestActivity");
+//        addItem("TextInputLayout", "TextInputLayoutActivity");
+//        addItem("Swipe refresh", "SwipeRefreshActivity");
+        addItem("recyclerview 倒计时demo", "RecyclerViewActivity3");
+        addItem("web test", "WebViewActivity");
+        addItem("spannable", "SpannableActivity");
+        addItem("缓动函数", "AnimationEasingFuncActivity");
+
     }
 
     private boolean isValidate(String name) {

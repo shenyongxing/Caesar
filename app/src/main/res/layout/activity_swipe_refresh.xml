@@ -7,4 +7,26 @@
     android:layout_height="match_parent"
     tools:context="com.study.shenxing.caesar.swiperefresh.SwipeRefreshActivity">
 
+    <com.aspsine.swipetoloadlayout.SwipeToLoadLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.aspsine.swipetoloadlayout.SwipeRefreshHeaderLayout
+            android:layout_width="match_parent"
+            android:background="@color/dark_blue"
+            android:layout_height="100dp"/>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcl_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <com.aspsine.swipetoloadlayout.SwipeLoadMoreFooterLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@android:color/holo_red_dark"/>
+
+    </com.aspsine.swipetoloadlayout.SwipeToLoadLayout>
+
+
 </android.support.constraint.ConstraintLayout>

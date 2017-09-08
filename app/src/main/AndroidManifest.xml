@@ -412,6 +412,13 @@
                 <category android:name="android.intent.category.STUDY_DEMO"/>
             </intent-filter>
         </activity>
+        <activity android:name=".recycleview.RecyclerViewActivity3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".customdrawable.CustomDrawableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -548,6 +555,36 @@
             </intent-filter>
         </activity>
         <activity android:name=".textinputlayout.TextInputLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
+        <activity android:name=".swiperefresh.SwipeRefreshActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".webview.WebViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".spannable.SpannableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".animationeasingfunctions.AnimationEasingFuncActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
