@@ -22,6 +22,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jakewharton.scalpel.ScalpelFrameLayout;
+import com.study.shenxing.caesar.animation.ReboundActivity;
 import com.study.shenxing.caesar.animationeasingfunctions.AnimationEasingFuncActivity;
 import com.study.shenxing.caesar.binder.AidlService;
 import com.study.shenxing.caesar.binder.AidlService1;
@@ -32,6 +33,7 @@ import com.study.shenxing.caesar.swiperefresh.SwipeRefreshActivity;
 import com.study.shenxing.caesar.textinputlayout.TextInputLayoutActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
 import com.study.shenxing.caesar.webview.WebViewActivity;
+import com.study.shenxing.caesar.weibo.DemoActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -199,6 +201,8 @@ public class MainActivity extends ListActivity {
         addItem("web test", "WebViewActivity");
         addItem("spannable", "SpannableActivity");
         addItem("缓动函数", "AnimationEasingFuncActivity");
+        addItem("rebound", "ReboundActivity");
+        addItem("仿微博", "DemoActivity");
 
     }
 

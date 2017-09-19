@@ -583,8 +583,21 @@
                 <category android:name="android.intent.category.STUDY_DEMO"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".animationeasingfunctions.AnimationEasingFuncActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".animation.ReboundActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.STUDY_DEMO"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".weibo.DemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
