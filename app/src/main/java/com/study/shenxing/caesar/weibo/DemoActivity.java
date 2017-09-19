@@ -17,7 +17,6 @@ import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.media.MediaPlayer.OnPreparedListener;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -167,7 +166,6 @@ public class DemoActivity extends Activity implements MyViewPager.OnPageChangeLi
         mVideoImageView = new MyVideoImageView(this);
         mVideoImageView.setScaleType(ScaleType.FIT_XY);
         contentView.addView(mVideoImageView);
-        Build.VERSION
     }
 
     @Override
