@@ -27,6 +27,7 @@ import com.study.shenxing.caesar.animationeasingfunctions.AnimationEasingFuncAct
 import com.study.shenxing.caesar.binder.AidlService;
 import com.study.shenxing.caesar.binder.AidlService1;
 import com.study.shenxing.caesar.binder.ITestInterface;
+import com.study.shenxing.caesar.pathanimation.PathAnimationActivity;
 import com.study.shenxing.caesar.recycleview.RecyclerViewActivity;
 import com.study.shenxing.caesar.spannable.SpannableActivity;
 import com.study.shenxing.caesar.swiperefresh.SwipeRefreshActivity;
@@ -158,7 +159,7 @@ public class MainActivity extends ListActivity {
 //        addItem("50 Hacks", "Hacks50Activity");
 //        addItem("SharePreference", "SharePreferencesActivity");
 //        addItem("双曲螺线动画", "HyperbolicAnimationActivity");
-//        addItem("知识点测试", "TestActivity2");
+        addItem("知识点测试", "TestActivity2");
 //        addItem("ViewFlipper", "ViewFlipperActivity");
 //        addItem("悬浮窗demo", "WindowManagerActivity");
 //        addItem("Shader", "ShaderActivity");
@@ -197,13 +198,13 @@ public class MainActivity extends ListActivity {
 //        addItem("ImageLoader Test", "ImageLoaderTestActivity");
 //        addItem("TextInputLayout", "TextInputLayoutActivity");
 //        addItem("Swipe refresh", "SwipeRefreshActivity");
-        addItem("recyclerview 倒计时demo", "RecyclerViewActivity3");
-        addItem("web test", "WebViewActivity");
-        addItem("spannable", "SpannableActivity");
-        addItem("缓动函数", "AnimationEasingFuncActivity");
-        addItem("rebound", "ReboundActivity");
-        addItem("仿微博", "DemoActivity");
-
+//        addItem("recyclerview 倒计时demo", "RecyclerViewActivity3");
+//        addItem("web test", "WebViewActivity");
+//        addItem("spannable", "SpannableActivity");
+//        addItem("缓动函数", "AnimationEasingFuncActivity");
+//        addItem("rebound", "ReboundActivity");
+//        addItem("仿微博", "DemoActivity");
+        addItem("路径动画", "PathAnimationActivity");
     }
 
     private boolean isValidate(String name) {

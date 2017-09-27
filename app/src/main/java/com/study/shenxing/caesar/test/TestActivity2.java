@@ -23,7 +23,6 @@ public class TestActivity2 extends Activity {
         mTestImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                doAnimation();
             }
         });
     }
@@ -32,11 +31,5 @@ public class TestActivity2 extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-    }
-
-    private void doAnimation() {
-        ScaleAnimation sa = new ScaleAnimation(1.0f, 0.5f, 1.0f, 0.5f, Animation.RELATIVE_TO_PARENT, 0.5f, Animation.RELATIVE_TO_PARENT, 0.5f);
-        sa.setDuration(10000);
-        mTestImg.startAnimation(sa);
     }
 }
