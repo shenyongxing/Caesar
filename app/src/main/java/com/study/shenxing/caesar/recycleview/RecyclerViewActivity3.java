@@ -26,6 +26,14 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+
+/**
+ * @Author shenxing
+ * @Date 2017/10/11
+ * @Email shen.xing@zyxr.com
+ * @Description recyclerview中item倒计时初步demo
+ */
+
 public class RecyclerViewActivity3 extends Activity {
     public static final String TAG = "sh_recycler_count";
     private RecyclerView mRecyclerView ;

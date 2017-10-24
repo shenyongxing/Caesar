@@ -14,7 +14,8 @@
         android:id="@+id/iv_scale_test"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:srcCompat="@drawable/test_svg"/>
+        app:srcCompat="@drawable/animate_check_mark"
+        android:tint="@android:color/holo_red_light"/>
 
 
 </RelativeLayout>

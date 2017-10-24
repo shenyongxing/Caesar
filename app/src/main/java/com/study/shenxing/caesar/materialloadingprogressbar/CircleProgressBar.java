@@ -313,10 +313,10 @@ public class CircleProgressBar extends ImageView {
     /**
      * Update the background color of the mBgCircle image view.
      */
-    public void setBackgroundColor(int colorRes) {
+    public void setBackgroundColor(int colorInt) {
         if (getBackground() instanceof ShapeDrawable) {
             final Resources res = getResources();
-            ((ShapeDrawable) getBackground()).getPaint().setColor(res.getColor(colorRes));
+            ((ShapeDrawable) getBackground()).getPaint().setColor(colorInt);
         }
     }
 

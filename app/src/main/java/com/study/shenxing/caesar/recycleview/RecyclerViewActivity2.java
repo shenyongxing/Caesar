@@ -15,6 +15,14 @@ import com.study.shenxing.caesar.R;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * @Author shenxing
+ * @Date 2017/10/11
+ * @Email shen.xing@zyxr.com
+ * @Description recyclerview的混排实践
+ */
+
 public class RecyclerViewActivity2 extends AppCompatActivity {
     public static final String TAG = "sh";
     private RecyclerView mRecyclerView;
