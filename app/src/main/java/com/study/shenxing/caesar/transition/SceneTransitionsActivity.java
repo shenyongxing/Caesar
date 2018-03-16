@@ -2,12 +2,16 @@ package com.study.shenxing.caesar.transition;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Explode;
+import android.transition.Fade;
 import android.transition.Scene;
+import android.transition.Slide;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.transition.TransitionManager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.study.shenxing.caesar.R;
 
@@ -16,6 +20,9 @@ public class SceneTransitionsActivity extends AppCompatActivity {
     private Scene mScene1;
     private Scene mScene2;
     private Transition mTransition;
+
+    private TextView mTextView;
+    private TextView mTextView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +36,9 @@ public class SceneTransitionsActivity extends AppCompatActivity {
         mScene1 = Scene.getSceneForLayout(mRootContainer, R.layout.scene1_layout, this);
         mScene2 = Scene.getSceneForLayout(mRootContainer, R.layout.scene2_layout, this);
         mScene1.enter();
+
+        mTextView = (TextView) findViewById(R.id.tv_helloworld);
+        mTextView2 = (TextView) findViewById(R.id.tv_helloworld2);
     }
 
     public void goToScene2 (View view) {
@@ -38,4 +48,20 @@ public class SceneTransitionsActivity extends AppCompatActivity {
     public void goToScene1 (View view) {
         TransitionManager.go(mScene1, mTransition);
     }
+
+    public void test(View v) {
+        TransitionManager.beginDelayedTransition(mRootContainer, new Slide());
+        toggleVisibility(mTextView, mTextView2);
+    }
+
+
+    private static void toggleVisibility(View... views) {
+        for (View view : views) {
+            if (view != null) {
+                boolean isVisible = view.getVisibility() == View.VISIBLE;
+                view.setVisibility(isVisible ? View.INVISIBLE : View.VISIBLE);
+            }
+        }
+    }
+
 }

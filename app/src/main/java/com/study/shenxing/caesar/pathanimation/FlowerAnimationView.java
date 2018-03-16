@@ -23,7 +23,7 @@ import java.util.List;
  * @Author shenxing
  * @Date 2017/9/26
  * @Email shen.xing@zyxr.com
- * @Description 天女散花动画view
+ * @Description
  */
 
 public class FlowerAnimationView extends View {

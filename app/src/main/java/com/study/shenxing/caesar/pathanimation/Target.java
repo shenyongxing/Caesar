@@ -66,7 +66,6 @@ public class Target {
      * @param canvas
      */
     public void draw(Canvas canvas) {
-//        canvas.drawPath(mPath, mPaint);
         mDrawable.draw(canvas);
     }
 

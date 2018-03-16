@@ -22,24 +22,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.jakewharton.scalpel.ScalpelFrameLayout;
-import com.study.shenxing.caesar.animation.ReboundActivity;
-import com.study.shenxing.caesar.animationeasingfunctions.AnimationEasingFuncActivity;
 import com.study.shenxing.caesar.binder.AidlService;
 import com.study.shenxing.caesar.binder.AidlService1;
 import com.study.shenxing.caesar.binder.ITestInterface;
-
-import com.study.shenxing.caesar.customview.CustomViewTestActivity;
-import com.study.shenxing.caesar.pathanimation.PathAnimationActivity;
-import com.study.shenxing.caesar.recycleview.RecyclerViewActivity;
-import com.study.shenxing.caesar.spannable.SpannableActivity;
-import com.study.shenxing.caesar.swiperefresh.SwipeRefreshActivity;
-import com.study.shenxing.caesar.textinputlayout.TextInputLayoutActivity;
-
-import com.study.shenxing.caesar.swipetorefresh.SwipeToRefreshActivity;
 import com.study.shenxing.caesar.utils.DrawUtils;
-import com.study.shenxing.caesar.volleyokhttpfastjson.VolleyOkhttpActivity;
-import com.study.shenxing.caesar.webview.WebViewActivity;
-import com.study.shenxing.caesar.weibo.DemoActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -50,6 +36,9 @@ import java.util.Map;
 
 import dalvik.system.PathClassLoader;
 import hugo.weaving.DebugLog;
+import rx.Observable;
+import rx.Subscriber;
+import rx.functions.Action1;
 
 @DebugLog
 public class MainActivity extends ListActivity {
@@ -91,6 +80,7 @@ public class MainActivity extends ListActivity {
         Log.i(TAG, "onCreate: JOKE_URL " + BuildConfig.JOKE_URL);
         Log.i(TAG, "onCreate: LOG_SWITCH " + BuildConfig.LOG_SWITCH);
 
+        testRxJavaHelloDemo("shenxing", "zhengyi", "shenling");
     }
 
     private void addItem(String title, String activityName) {
@@ -180,7 +170,7 @@ public class MainActivity extends ListActivity {
 //        addItem("View Measure实践", "MeasureTestActivity");
         addItem("RecycleView混排", "RecyclerViewActivity2");
 //        addItem("MeterialDesign", "MeterialDesignDemo");
-//        addItem("Transition", "SceneTransitionsActivity");
+        addItem("Transition", "SceneTransitionsActivity");
 //        addItem("Scale 锚点问题", "ScalePivotActivity");
 //        addItem("EventBus demo", "EventBusDemo");
 //        addItem("aidl test", "AidlTestActivity");
@@ -204,7 +194,7 @@ public class MainActivity extends ListActivity {
 //        addItem("TextInputLayout", "TextInputLayoutActivity");
 //        addItem("Swipe refresh", "SwipeRefreshActivity");
 //        addItem("recyclerview 倒计时demo", "RecyclerViewActivity3");
-//        addItem("web test", "WebViewActivity");
+        addItem("web test", "WebViewActivity");
 //        addItem("spannable", "SpannableActivity");
 //        addItem("缓动函数", "AnimationEasingFuncActivity");
 //        addItem("rebound", "ReboundActivity");
@@ -217,6 +207,8 @@ public class MainActivity extends ListActivity {
 //        addItem("Swipe to refresh", "SwipeToRefreshActivity");
 //        addItem("圆盘滚动特效", "CustomViewTestActivity");
         addItem("volley+okhttp+fastjson", "VolleyOkhttpActivity");
+        addItem("测试DialogFragment", "DialogFragmentActivity");
+        addItem("Picossa等图片框架使用", "PicossaActivity");
     }
 
     private boolean isValidate(String name) {
@@ -384,4 +376,39 @@ public class MainActivity extends ListActivity {
             Log.i(TAG, "method : " + method.getName());
         }
     }
+
+    public void testRxJavaHelloDemo(String... name) {
+        Observable.from(name).subscribe(new Action1<String>() {
+            @Override
+            public void call(String s) {
+                Log.i(TAG, "call: " + s);
+            }
+        });
+
+        Observable.from(name).subscribe(mSubscriber);
+
+
+
+
+        // =====================
+
+    }
+
+
+    private Subscriber<String> mSubscriber = new Subscriber<String>() {
+        @Override
+        public void onCompleted() {
+            Log.i(TAG, "onCompleted: ");
+        }
+
+        @Override
+        public void onError(Throwable e) {
+            Log.i(TAG, "onError: " + e.getMessage());
+        }
+
+        @Override
+        public void onNext(String o) {
+            Log.i(TAG, "onNext: " + o);
+        }
+    };
 }
